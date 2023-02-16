@@ -1,4 +1,4 @@
-![Me :)](..%2F..%2Fimages%2Fchoco_mage.jpg)
+![Me :)](images/choco_mage.jpg)
 
 ## About Me
 
