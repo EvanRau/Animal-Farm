@@ -18,6 +18,8 @@
 
 #include "Trim.h"
 #include <ctype.h>
+#include <string.h>
+
 
 /// @see https://en.cppreference.com/w/c/string/byte/isspace
 char* trim_left( char inString[] ) {
@@ -32,6 +34,13 @@ char* trim_left( char inString[] ) {
 
 /// @see https://en.cppreference.com/w/c/string/byte/isspace
 char* trim_right( char inString[] ) {
+
+    char *end;
+    end = inString + strlen(inString) - 1;
+    while(end > inString && isspace((unsigned char)*end)){
+        end--;
+    }
+    end[1] = '\0';
    return inString;
 }
 
@@ -40,7 +49,17 @@ char* trim_right( char inString[] ) {
 ///
 /// @see https://en.cppreference.com/w/c/string/byte/isspace
 char* trim_edges( char inString[] ) {
-   return inString;
+
+    while(isspace((unsigned char)*inString)) {
+        inString++;
+    }
+    char *end;
+    end = inString + strlen(inString) - 1;
+    while (end > inString && isspace((unsigned char) *end)) {
+        end--;
+    }
+    end[1] = '\0';
+    return inString;
 }
 
 
@@ -51,5 +70,18 @@ char* trim_edges( char inString[] ) {
 ///    - Replace consecutive whitespace characters inside the string with
 ///      a single `" "`
 char* trim( char inString[] ) {
-   return inString;
+    int i, x;
+    for(i=x=0; inString[i]; i++){
+        if(!isspace(inString[i]) || (i > 0 && !isspace(inString[i-1]))) {
+            inString[x++] = inString[i];
+        }
+        }
+    inString[x]='\0';
+    char *end;
+    end = inString + strlen(inString) - 1;
+    while (end > inString && isspace((unsigned char) *end)) {
+        end--;
+    }
+    end[1] = '\0';
+    return inString;
 }
