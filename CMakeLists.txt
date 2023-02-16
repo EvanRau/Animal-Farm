@@ -14,7 +14,7 @@ cmake_minimum_required(VERSION 3.25)
 
 project(ee205_animal_farm
       VERSION 1.0
-      DESCRIPTION "Lorem ipsum"
+      DESCRIPTION "All animals are equal, but some animals are more equal than others"
       LANGUAGES CXX)
 
 message(STATUS "CMAKE_SOURCE_DIR = [${CMAKE_SOURCE_DIR}]")

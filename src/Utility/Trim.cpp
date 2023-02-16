@@ -12,15 +12,20 @@
 /// This implementation is designed to try to balance both requirements.
 ///
 /// @file    Trim.cpp
-/// @author  @todo yourName <yourMail@hawaii.edu>
+/// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
 
 
 #include "Trim.h"
-
+#include <ctype.h>
 
 /// @see https://en.cppreference.com/w/c/string/byte/isspace
 char* trim_left( char inString[] ) {
+
+    while(isspace((unsigned char)*inString)) {
+        inString++;
+    }
+
    return inString;
 }
 
