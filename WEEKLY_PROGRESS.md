@@ -22,6 +22,6 @@ This information can be used to measure things like:
 | Working .h lines      |   |   |   |   |   22 |   6  |   |   |   |   |   |   |   |   |   |   |
 | Working .cpp lines    |   |   |   |   |   72 |   56 |   |   |   |   |   |   |   |   |   |   |
 | Number of commits     |   |   |   |   |   16 |   4  |   |   |   |   |   |   |   |   |   |   |
-| Number of test points |   |   |   |   |   94 | 119  |   |   |   |   |   |   |   |   |   |   |
+| Number of test points |   |   |   |   |   94 |  94  |   |   |   |   |   |   |   |   |   |   |
 
 Date last updated:  23 Feb 2023 - Evan Rau
