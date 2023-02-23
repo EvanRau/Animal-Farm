@@ -6,13 +6,14 @@
 /// @file    ArrayDB.cpp
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
+#include <cstring>
 #include "ArrayDB.h"
 
+Cat CatDB[MAX_CATS];
 
-Cat* initDB(){
-    const int temp = MAX_CATS;
-    static Cat CatDB[temp] ;
-    return CatDB;
+void initDB(){
+    memset( CatDB, 0, sizeof( CatDB) );
+    return;
 }
 
 bool addCat(Cat Cat, struct Cat* CatDB){

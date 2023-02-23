@@ -2,14 +2,13 @@
 //         University of Hawaii, College of Engineering
 //         Animal Farm - EE 205 - Spr 2023
 //
-///
 /// @file    Cat.cpp
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
+
 #include "Cat.h"
 #include <cstdio>
 #include <cstdlib>
-
 
 
 const char* CatNames[35]
@@ -33,51 +32,50 @@ bool validateCat(Cat Cat){
 }
 
 struct Cat generateCat(){
-    struct Cat Cat; //Initializes Cat Struct to be filled in
+    struct Cat cat = {}; //Initializes cat Struct to be filled in
 
-
-    uint32_t temp = rand() % 35; //Generates Cat.name
+    uint32_t temp = rand() % 35; //Generates cat.name
     const char* Name = CatNames[temp];
-    Cat.name = Name;
+    cat.name = Name;
 
 
-    temp = rand() % 3; //Generate Cat.gender
+    temp = rand() % 3; //Generate cat.gender
     switch(temp) {
         case 0:
-            Cat.gender = UNKNOWN;
+            cat.gender = UNKNOWN;
             break;
         case 1:
-            Cat.gender = MALE;
+            cat.gender = MALE;
             break;
         case 2:
-            Cat.gender = FEMALE;
+            cat.gender = FEMALE;
             break;
     }
 
 
-    float random = ((float) rand()) / (float) RAND_MAX; //Generates random float for Cat.Weight
+    const float random = ((float) rand()) / (float) RAND_MAX; //Generates random float for cat.Weight
     float min = 0.01;
     float max = 99.99;
     float temp2 = random * (max - min);
-    Cat.weightInPounds = temp2;
+    cat.weightInPounds = temp2;
 
 
-    temp = rand() % 4294967295; //Generate Cat.chipID
-    Cat.chipID = temp;
+    temp = rand() % 4294967295; //Generate cat.chipID
+    cat.chipID = temp;
 
 
-    temp = rand() % 2; //Generate Cat.isFixed
+    temp = rand() % 2; //Generate cat.isFixed
     if(temp == 0){
-        Cat.isFixed = false;
+        cat.isFixed = false;
     }
 
 
-    bool Validation = validateCat(Cat); //Runs validation test for
+    bool Validation = validateCat(cat); //Runs validation test for
     if(Validation){
-        return Cat;
+        return cat;
     }
-    printf("Error: Invalid Cat");
-    return Cat;
+    printf("Error: Invalid cat");
+    return cat;
 }
 
 int printCat(Cat Cat){
@@ -96,10 +94,10 @@ int printCat(Cat Cat){
     printf("Weight: %.2f lb\n", Cat.weightInPounds);
     printf("Chip ID: %x\n", Cat.chipID);
     if (Cat.isFixed){
-        printf("Is Fixed?: Yes\n");
+        printf("Is Fixed?: Yes\n\n");
     }
     else{
-        printf("Is Fixed?: No\n");
+        printf("Is Fixed?: No\n\n");
     }
     return 0;
 }

@@ -10,7 +10,8 @@
 #ifndef EE205_ANIMAL_FARM_CAT_H
 #define EE205_ANIMAL_FARM_CAT_H
 
-#include <cstdint>
+#include <cstdint> // For uint32_t
+
 #define MAX_CAT_NAME 40
 
 

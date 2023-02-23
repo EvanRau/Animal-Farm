@@ -7,7 +7,7 @@
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
 #include "cat.h"
-#define MAX_CATS 100;
+#define MAX_CATS 100
 
 #ifndef EE205_ANIMAL_FARM_ARRAYDB_H
 #define EE205_ANIMAL_FARM_ARRAYDB_H

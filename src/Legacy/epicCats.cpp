@@ -7,13 +7,17 @@
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
 #include "ArrayDB.h"
-#include "Cat.h"
 
 int main(){
-    Cat Cat = generateCat();
     struct Cat* CatDB = initDB();
-    addCat(Cat, CatDB);
-    printCat(CatDB[0]);
+    for(int i = 0; i < 10; i++){
+        const Cat Cat = generateCat();
+        addCat(Cat, CatDB);
+    }
+    validateCatDB(CatDB);
+    for(int i =0; i < 10; i++){
+        printCat(CatDB[i]);
+    }
 
     return 0;
 }
