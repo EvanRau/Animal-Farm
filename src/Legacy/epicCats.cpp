@@ -6,9 +6,14 @@
 /// @file    epicCats.cpp
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
+#include "ArrayDB.h"
 #include "Cat.h"
+
 int main(){
-    struct Cat Cat = generateCat();
-    printCat(Cat);
+    Cat Cat = generateCat();
+    struct Cat* CatDB = initDB();
+    addCat(Cat, CatDB);
+    printCat(CatDB[0]);
+
     return 0;
 }
