@@ -8,7 +8,7 @@ Project Statistics
 |Unit Tests|1|167|9741|119|8139|
 |Python|1|264|7437|174|5949|
 |HTML|1|30|611|n/a|n/a|
-|Markdown|3|17|649|n/a|n/a|
+|Markdown|3|44|2240|n/a|n/a|
 |Images|13|n/a|2531643|n/a|n/a|
 |Other  Files|10|n/a|14606|n/a|n/a|
 
@@ -17,10 +17,10 @@ No tags
 
 ## Software Engineering Metrics
 
-Number of commits:  6
+Number of commits:  7
 
 Number of unit tests:  4
 
 Number of test points:  94
 
-Automatically generated on Thu Feb 23 00:48:17 2023
+Automatically generated on Thu Feb 23 00:58:56 2023
