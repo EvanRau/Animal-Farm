@@ -12,27 +12,23 @@
 
 #include <cstdint>
 #define MAX_CAT_NAME 40
-const char* CatNames[35]
-    = {"Kairi", "Oreo", "Cappuccino", "Wasabi", "Mango", "Mocha", "Kiwi", "Cookie",
-       "Tito", "Mochi", "Clementine", "Ginger", "Maple", "Pepper", "Pickle",
-       "Waffle", "Chip", "Miso", "Peanut", "Brownie", "Honey", "Jameson",
-       "Butterscotch", "Cheerio", "Kit Kat", "Nilla", "Truffle", "Cheeto", "Java",
-       "Olive", "Sushi", "Cheddar", "Meatball", "Whiskey", "Bingus"} ;
 
 
-typedef enum Gender {MALE, FEMALE, UNKNOWN};
+
+typedef enum Gender {MALE, FEMALE, UNKNOWN} Gender;
 
 typedef struct Cat{
-    char Name[MAX_CAT_NAME];
+    const char* Name;
     Gender Gender;
     float weightInPounds;
     uint32_t chipID;
     bool isFixed;
-
-};
+} Cat;
 
 bool validateCat(Cat Cat);
 
 struct Cat generateCat();
+
+int printCat(Cat Cat);
 
 #endif //EE205_ANIMAL_FARM_CAT_H

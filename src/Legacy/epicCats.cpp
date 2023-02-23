@@ -6,8 +6,9 @@
 /// @file    epicCats.cpp
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
-#include <stdio.h>
+#include "Cat.h"
 int main(){
-    printf("Hello World");
+    struct Cat Cat = generateCat();
+    printCat(Cat);
     return 0;
 }
