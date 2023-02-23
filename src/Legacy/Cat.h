@@ -26,8 +26,8 @@ struct Cat{
 
 extern bool validateCat(Cat Cat);
 
-struct Cat generateCat();
+extern struct Cat generateCat();
 
-int printCat(Cat Cat);
+extern int printCat(Cat Cat);
 
 #endif //EE205_ANIMAL_FARM_CAT_H
