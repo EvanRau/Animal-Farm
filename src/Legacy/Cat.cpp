@@ -6,10 +6,12 @@
 /// @file    Cat.cpp
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
-#include <cstdlib>
-#include <ctime>
-#include <cstdio>
 #include "Cat.h"
+#include <cstdio>
+#include <cstdlib>
+
+
+
 const char* CatNames[35]
         = {"Kairi", "Oreo", "Cappuccino", "Wasabi", "Mango", "Mocha", "Kiwi", "Cookie",
            "Tito", "Mochi", "Clementine", "Ginger", "Maple", "Pepper", "Pickle",
@@ -19,10 +21,11 @@ const char* CatNames[35]
 
 
 bool validateCat(Cat Cat){
-    if (sizeof(Cat.Name) <= 0 || sizeof(Cat.Name) > MAX_CAT_NAME){ //Invalid Name
+    int nameSize = sizeof(Cat.name);
+    if (nameSize <= 0 || nameSize > MAX_CAT_NAME){ //Invalid name
         return false;
     }
-    if (Cat.Gender != MALE && Cat.Gender != FEMALE && Cat.Gender != UNKNOWN){ //Invalid Gender
+    if (Cat.gender != MALE && Cat.gender != FEMALE && Cat.gender != UNKNOWN){ //Invalid gender
         return false;
     }
 
@@ -30,31 +33,32 @@ bool validateCat(Cat Cat){
 }
 
 struct Cat generateCat(){
-    srand (static_cast <unsigned> (time(0))); //Seed random number generator
     struct Cat Cat; //Initializes Cat Struct to be filled in
 
 
-    uint32_t temp = rand() % 35; //Generates Cat.Name
+    uint32_t temp = rand() % 35; //Generates Cat.name
     const char* Name = CatNames[temp];
-    Cat.Name = Name;
+    Cat.name = Name;
 
 
-    temp = rand() % 3; //Generate Cat.Gender
+    temp = rand() % 3; //Generate Cat.gender
     switch(temp) {
         case 0:
-            Cat.Gender = UNKNOWN;
+            Cat.gender = UNKNOWN;
             break;
         case 1:
-            Cat.Gender = MALE;
+            Cat.gender = MALE;
             break;
         case 2:
-            Cat.Gender = FEMALE;
+            Cat.gender = FEMALE;
             break;
     }
 
 
     float random = ((float) rand()) / (float) RAND_MAX; //Generates random float for Cat.Weight
-    float temp2 = random * (99.99 - 0.01);
+    float min = 0.01;
+    float max = 99.99;
+    float temp2 = random * (max - min);
     Cat.weightInPounds = temp2;
 
 
@@ -64,25 +68,21 @@ struct Cat generateCat(){
 
     temp = rand() % 2; //Generate Cat.isFixed
     if(temp == 0){
-        Cat.isFixed = true;
-    }
-    else{
         Cat.isFixed = false;
     }
 
+
     bool Validation = validateCat(Cat); //Runs validation test for
-    if(Validation == true){
+    if(Validation){
         return Cat;
     }
-    else{
-        printf("Error: Invalid Cat");
-        return Cat;
-    }
+    printf("Error: Invalid Cat");
+    return Cat;
 }
 
 int printCat(Cat Cat){
-    printf("Name: %s\n", Cat.Name);
-    switch(Cat.Gender) {
+    printf("Name: %s\n", Cat.name);
+    switch(Cat.gender) {
         case MALE:
             printf("Gender: Male\n");
             break;

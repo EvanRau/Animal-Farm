@@ -14,18 +14,17 @@
 #define MAX_CAT_NAME 40
 
 
+enum Gender {MALE, FEMALE, UNKNOWN};
 
-typedef enum Gender {MALE, FEMALE, UNKNOWN} Gender;
+struct Cat{
+    const char* name;
+    Gender      gender;
+    float       weightInPounds;
+    uint32_t    chipID;
+    bool        isFixed;
+};
 
-typedef struct Cat{
-    const char* Name;
-    Gender Gender;
-    float weightInPounds;
-    uint32_t chipID;
-    bool isFixed;
-} Cat;
-
-bool validateCat(Cat Cat);
+extern bool validateCat(Cat Cat);
 
 struct Cat generateCat();
 
