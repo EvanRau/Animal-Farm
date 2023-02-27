@@ -11,12 +11,12 @@
 #define CATS_TO_GENERATE 10
 
 int main(){
-    initDB();
-    for(int i = 0; i < CATS_TO_GENERATE; i++){
+    initDB(); //Initialized Global Array
+    for(int i = 0; i < CATS_TO_GENERATE; i++){ //Creates cats to be added to array for defined number of times
         const Cat Cat = generateCat();
         addCat(Cat);
     }
-    validateCatDB();
+    validateCatDB(); //Validates Array to ensure all cats are viable
     for(int i =0; i < CATS_TO_GENERATE; i++){
         printCat(catDB[i]);
     }

@@ -11,7 +11,7 @@
 Cat catDB[MAX_CATS];
 
 void initDB(){
-    memset(catDB, 0, sizeof(catDB));
+    memset(catDB, 0, sizeof(catDB)); //Sets the memory for all values of Cat in catDB to 0
 }
 
 int findNextBlank(){  //Empty values in array have all properties of cat set to 0; function iterates through
@@ -24,18 +24,21 @@ int findNextBlank(){  //Empty values in array have all properties of cat set to 
 
 }
 
-bool addCat(Cat Cat){
-    int next = findNextBlank();
-    if (next > MAX_CATS){
+bool addCat(Cat cat){
+    int next = findNextBlank(); //Finds empty spot in array
+    if (next > MAX_CATS){ //Checks if value is > size of array
         return false;
     }
-    catDB[next] = Cat;
+    catDB[next] = cat; //Adds cat to array
     return true;
 }
 
 bool validateCatDB(){
     int totalCats = findNextBlank();
-    for(int i = 0; i<=totalCats; i++){
+    if (totalCats > MAX_CATS){ //Checks if value is > size of array
+        return false;
+    }
+    for(int i = 0; i<totalCats; i++){ //Validates each cat in array
         const bool test = validateCat(catDB[i]);
         if(!test) {
             return false;
