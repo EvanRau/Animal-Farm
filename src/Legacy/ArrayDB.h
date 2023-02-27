@@ -12,12 +12,13 @@
 #ifndef EE205_ANIMAL_FARM_ARRAYDB_H
 #define EE205_ANIMAL_FARM_ARRAYDB_H
 
-extern Cat* initDB();
+extern void initDB();
 
-extern bool addCat(Cat Cat, struct Cat* CatDB);
+extern bool addCat(Cat Cat, struct Cat* catDb);
 
-extern bool validateCatDB(Cat* Cat);
+extern bool validateCatDB(Cat* catDb);
 
+extern int findNextBlank(Cat* catDb);
 
 
 #endif //EE205_ANIMAL_FARM_ARRAYDB_H

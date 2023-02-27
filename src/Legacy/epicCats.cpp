@@ -9,7 +9,7 @@
 #include "ArrayDB.h"
 
 int main(){
-    struct Cat* CatDB = initDB();
+    initDB();
     for(int i = 0; i < 10; i++){
         const Cat Cat = generateCat();
         addCat(Cat, CatDB);

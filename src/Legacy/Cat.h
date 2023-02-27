@@ -25,10 +25,10 @@ struct Cat{
     bool        isFixed;
 };
 
-extern bool validateCat(Cat Cat);
+extern bool validateCat(Cat cat);
 
 extern struct Cat generateCat();
 
-extern int printCat(Cat Cat);
+extern int printCat(Cat cat);
 
 #endif //EE205_ANIMAL_FARM_CAT_H
