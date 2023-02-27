@@ -7,9 +7,9 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "Cat.h"
-#include <csignal>
 #include <cstdio>
 #include <cstdlib>
+#include <string.h>
 #include <time.h>
 
 
@@ -25,11 +25,8 @@ const char* CatNames[TOTAL_NAMES]
 
 
 bool validateCat(Cat cat){
-    int nameSize = sizeof(cat.name);
-    if (nameSize <= 0 || nameSize > MAX_CAT_NAME){ //Invalid name
-        return false;
-    }
-    if (cat.gender != MALE && cat.gender != FEMALE && cat.gender != UNKNOWN){ //Invalid gender
+    size_t test = strlen(cat.name);
+    if (test == 0 || test > MAX_CAT_NAME){ //Invalid name
         return false;
     }
     if (cat.weightInPounds <= 0 || cat.weightInPounds > 100){
