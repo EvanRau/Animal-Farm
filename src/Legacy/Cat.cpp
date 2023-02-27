@@ -71,8 +71,9 @@ struct Cat generateCat(){
 
     int randFixed = rand() % 2; //Generate cat.isFixed
     if(randFixed == 0){
-        cat.isFixed = false;
+        cat.isFixed = true;
     }
+
 
 
     bool Validation = validateCat(cat); //Runs validation test for cat
