@@ -23,7 +23,7 @@ const char* CatNames[TOTAL_NAMES]
 
 bool validateCat(Cat cat){
     int nameSize = sizeof(cat.name);
-    if (nameSize <= 0 || nameSize > MAX_CAT_NAME){ //Invalid name
+    if (nameSize <= 0 || nameSize > MAX_CAT_NAME|| cat.name == NULL){ //Invalid name
         return false;
     }
     if (cat.gender != MALE && cat.gender != FEMALE && cat.gender != UNKNOWN){ //Invalid gender

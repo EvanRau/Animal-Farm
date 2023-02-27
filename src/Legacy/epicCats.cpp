@@ -8,16 +8,17 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "ArrayDB.h"
 
+#define CATS_TO_GENERATE 10
+
 int main(){
-    Cat CatDB[MAX_CATS];
     initDB();
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < CATS_TO_GENERATE; i++){
         const Cat Cat = generateCat();
-        addCat(Cat, CatDB);
+        addCat(Cat);
     }
-    validateCatDB(CatDB);
-    for(int i =0; i < 10; i++){
-        printCat(CatDB[i]);
+    validateCatDB();
+    for(int i =0; i < CATS_TO_GENERATE; i++){
+        printCat(catDB[i]);
     }
 
     return 0;
