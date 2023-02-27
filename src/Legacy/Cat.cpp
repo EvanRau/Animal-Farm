@@ -7,8 +7,11 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "Cat.h"
+#include <csignal>
 #include <cstdio>
 #include <cstdlib>
+#include <time.h>
+
 
 #define TOTAL_NAMES 35
 
@@ -39,6 +42,8 @@ bool validateCat(Cat cat){
 struct Cat generateCat(){
     struct Cat cat = {}; //Initializes cat Struct to be filled in
 
+    int srandSeeder = rand(); //function called multiple times per second, so time(nullptr) isn't sufficient for seeding
+    srand(time(nullptr)-srandSeeder); //subtracting a random number from time(nullptr) resolves issue
     int randName = rand() % TOTAL_NAMES; //Generates cat.name
     const char* Name = CatNames[randName];
     cat.name = Name;
