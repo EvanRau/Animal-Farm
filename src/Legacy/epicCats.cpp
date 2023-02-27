@@ -9,6 +9,7 @@
 #include "ArrayDB.h"
 
 int main(){
+    Cat CatDB[MAX_CATS];
     initDB();
     for(int i = 0; i < 10; i++){
         const Cat Cat = generateCat();
