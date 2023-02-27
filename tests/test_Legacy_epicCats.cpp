@@ -2,7 +2,7 @@
 //         University of Hawaii, College of Engineering
 //         Animal Farm - EE 205 - Spr 2023
 //
-/// @file    Cat.cpp
+/// @file    test_Legacy_epicCats.cpp
 /// @author  Evan Rau <evanrau@hawaii.edu>
 //////////////////////////////////////////////////////////////////////////////
 

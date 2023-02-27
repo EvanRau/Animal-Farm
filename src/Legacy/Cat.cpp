@@ -12,10 +12,10 @@
 #include <string.h>
 #include <time.h>
 
-
+///Total number of names in CatNames
 #define TOTAL_NAMES 35
 
-
+///A list of all possible cats
 const char* CatNames[TOTAL_NAMES]
         = {"Kairi", "Oreo", "Cappuccino", "Wasabi", "Mango", "Mocha", "Kiwi", "Cookie",
            "Tito", "Mochi", "Clementine", "Ginger", "Maple", "Pepper", "Pickle",
@@ -23,7 +23,9 @@ const char* CatNames[TOTAL_NAMES]
            "Butterscotch", "Cheerio", "Kit Kat", "Nilla", "Truffle", "Cheeto", "Java",
            "Olive", "Sushi", "Cheddar", "Meatball", "Whiskey", "Bingus"} ;
 
-
+/// Tests that the cat doesnt contain an illegal value for its name or weight
+/// \param cat
+/// @returns false if the Name or Weight is invalid
 bool validateCat(Cat cat){
     size_t test = strlen(cat.name);
     if (test == 0 || test > MAX_CAT_NAME){ //Invalid name
@@ -36,6 +38,9 @@ bool validateCat(Cat cat){
     return true; //Valid cat
 }
 
+/// Generates a new cat randomly
+/// @returns false if the generated cat is invalid
+/// @see validateCat
 struct Cat generateCat(){
     struct Cat cat = {}; //Initializes cat Struct to be filled in
 
@@ -86,6 +91,9 @@ struct Cat generateCat(){
     return cat;
 }
 
+/// Prints the values of the generated cat
+///
+/// @returns the exit value
 int printCat(Cat cat){
     printf("Name: %s\n", cat.name);
     switch(cat.gender) {

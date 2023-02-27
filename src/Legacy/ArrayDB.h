@@ -6,6 +6,7 @@
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
 #include "cat.h"
+/// Maximum number of cats allowed in catDB
 #define MAX_CATS 100
 
 
