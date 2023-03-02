@@ -27,7 +27,7 @@ const char* CatNames[TOTAL_NAMES]
 /// \param cat
 /// @returns false if the Name or Weight is invalid
 bool validateCat(Cat cat){
-    size_t test = strlen(cat.name);
+    const size_t test = strlen(cat.name);
     if (test == 0 || test > MAX_CAT_NAME){ //Invalid name
         return false;
     }
@@ -44,14 +44,14 @@ bool validateCat(Cat cat){
 struct Cat generateCat(){
     struct Cat cat = {}; //Initializes cat Struct to be filled in
 
-    int srandSeeder = rand(); //function called multiple times per second, so time(nullptr) isn't sufficient for seeding
+    const int srandSeeder = rand(); //function called multiple times per second, so time(nullptr) isn't sufficient for seeding
     srand(time(nullptr)-srandSeeder); //subtracting a random number from time(nullptr) resolves issue
-    int randName = rand() % TOTAL_NAMES; //Generates cat.name
+    const int randName = rand() % TOTAL_NAMES; //Generates cat.name
     const char* Name = CatNames[randName];
     cat.name = Name;
 
 
-    int randGender = rand() % 3; //Generate cat.gender
+    const int randGender = rand() % 3; //Generate cat.gender
     switch(randGender) {
         case 0:
             cat.gender = UNKNOWN;
@@ -66,24 +66,24 @@ struct Cat generateCat(){
 
 
     const float random = ((float) rand()) / (float) RAND_MAX; //Generates random float for cat.Weight
-    float min = 0.01;
-    float max = 99.99;
-    float randWeight = random * (max - min);
+    const float min = 0.01;
+    const float max = 99.99;
+    const float randWeight = random * (max - min);
     cat.weightInPounds = randWeight;
 
 
-    uint32_t randID = rand() % 4294967295; //Generate cat.chipID
+    const uint32_t randID = rand() % 4294967295; //Generate cat.chipID
     cat.chipID = randID;
 
 
-    int randFixed = rand() % 2; //Generate cat.isFixed
+    const int randFixed = rand() % 2; //Generate cat.isFixed
     if(randFixed == 0){
         cat.isFixed = true;
     }
 
 
 
-    bool Validation = validateCat(cat); //Runs validation test for cat
+    const bool Validation = validateCat(cat); //Runs validation test for cat
     if(Validation){
         return cat;
     }
