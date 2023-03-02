@@ -101,3 +101,5 @@ int printCat(Cat Cat){
     }
     return 0;
 }
+
+bool updateCatName(int catNum, const char* name){}
