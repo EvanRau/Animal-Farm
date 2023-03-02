@@ -7,6 +7,7 @@
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
 #include "ArrayDB.h"
+#include <cstdlib>
 
 /// Sets the total number of cats to be created & added to the Database
 #define CATS_TO_GENERATE 10
@@ -24,6 +25,16 @@ int main(){
     for(int i =0; i < CATS_TO_GENERATE; i++){
         printCat(catDB[i]);
     }
+
+    //Proof of update functions
+    updateCatName(2, "Bingus");
+    updateCatGender(2, UNKNOWN);
+    updateCatWeight(2, 42.0);
+    uint32_t newID  = rand() % 4294967295;
+    updateCatID(2, newID);
+    updateCatFixed(2, true);
+
+    printCat(catDB[2]);
 
     return 0;
 }
