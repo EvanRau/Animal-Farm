@@ -8,15 +8,21 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "ArrayDB.h"
 
+/// Sets the total number of cats to be created & added to the Database
+#define CATS_TO_GENERATE 10
+
+/// Program to create cats, add cats to catDB, and print out every cat in the database
+///
+/// @returns the exit value
 int main(){
-    struct Cat* CatDB = initDB();
-    for(int i = 0; i < 10; i++){
+    initDB(); //Initialized Global Array
+    for(int i = 0; i < CATS_TO_GENERATE; i++){ //Creates cats to be added to array for defined number of times
         const Cat Cat = generateCat();
-        addCat(Cat, CatDB);
+        addCat(Cat);
     }
-    validateCatDB(CatDB);
-    for(int i =0; i < 10; i++){
-        printCat(CatDB[i]);
+    validateCatDB(); //Validates Array to ensure all cats are viable
+    for(int i =0; i < CATS_TO_GENERATE; i++){
+        printCat(catDB[i]);
     }
 
     return 0;
