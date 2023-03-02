@@ -126,3 +126,49 @@ bool updateCatWeight(int catNum, float weight) {
 
     return true;
 }
+
+/// Updates the chipID of a cat in the DB
+///
+/// \param catNum
+/// \param chipID
+/// @returns false if there is no cat or if the name is invalid. else return true
+bool updateCatID(int catNum, uint32_t chipID) {
+    if (strlen(catDB[catNum].name) == 0) { //Checks that the cat exists in the DB
+        printf("ERROR:Cat does not exist\n");
+        return false;
+    }
+    uint32_t chipIDOld= catDB[catNum].chipID; //Holds onto old chipID in case new one is invalid
+
+    catDB[catNum].chipID = chipID;
+
+    if (!validateCat(catDB[catNum])) { //Checks that new cat is valid. reverts change if not
+        printf("ERROR: Invalid new name! Reverting change.\n");
+        catDB[catNum].chipID = chipIDOld;
+        return false;
+    }
+
+    return true;
+}
+
+/// Updates the fixed state of a cat in the DB
+///
+/// \param catNum
+/// \param fixed
+/// @returns false if there is no cat or if the name is invalid. else return true
+bool updateCatFixed(int catNum, bool fixed) {
+    if (strlen(catDB[catNum].name) == 0) { //Checks that the cat exists in the DB
+        printf("ERROR:Cat does not exist\n");
+        return false;
+    }
+    bool fixedOld= catDB[catNum].isFixed; //Holds onto old fixed state in case new one is invalid
+
+    catDB[catNum].isFixed = fixed;
+
+    if (!validateCat(catDB[catNum])) { //Checks that new cat is valid. reverts change if not
+        printf("ERROR: Invalid new name! Reverting change.\n");
+        catDB[catNum].isFixed = fixedOld;
+        return false;
+    }
+
+    return true;
+}
