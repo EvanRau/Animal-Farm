@@ -6,8 +6,9 @@
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
 #include "ArrayDB.h"
-#include <cstring>
 #include <cstdio>
+#include <cstring>
+
 
 /// Global array for cat database
 Cat catDB[MAX_CATS];
@@ -33,7 +34,7 @@ int findNextBlank(){  //Empty values in array have all properties of cat set to 
 /// \param cat
 /// @returns true if there is room in catDB for a new cat
 bool addCat(Cat cat){
-    int next = findNextBlank(); //Finds empty spot in array
+    const int next = findNextBlank(); //Finds empty spot in array
     if (next > MAX_CATS){ //Checks if value is > size of array
         return false;
     }
@@ -45,7 +46,7 @@ bool addCat(Cat cat){
 ///
 /// @returns false if there are more cats in catDB than allowed or if a cat in catDB failed a test
 bool validateCatDB(){
-    int totalCats = findNextBlank();
+    const int totalCats = findNextBlank();
     if (totalCats > MAX_CATS){ //Checks if value is > size of array
         return false;
     }
@@ -91,7 +92,7 @@ bool updateCatGender(int catNum, Gender gender){
         printf("ERROR:Cat does not exist\n");
         return false;
     }
-    Gender genderOld = catDB[catNum].gender; //Holds onto old gender in case new one is invalid
+    const Gender genderOld = catDB[catNum].gender; //Holds onto old gender in case new one is invalid
 
     catDB[catNum].gender = gender;
 
@@ -114,7 +115,7 @@ bool updateCatWeight(int catNum, float weight) {
         printf("ERROR:Cat does not exist\n");
         return false;
     }
-    float weightOld = catDB[catNum].weightInPounds; //Holds onto old weight in case new one is invalid
+    const float weightOld = catDB[catNum].weightInPounds; //Holds onto old weight in case new one is invalid
 
     catDB[catNum].weightInPounds = weight;
 
@@ -137,7 +138,7 @@ bool updateCatID(int catNum, uint32_t chipID) {
         printf("ERROR:Cat does not exist\n");
         return false;
     }
-    uint32_t chipIDOld= catDB[catNum].chipID; //Holds onto old chipID in case new one is invalid
+    const uint32_t chipIDOld= catDB[catNum].chipID; //Holds onto old chipID in case new one is invalid
 
     catDB[catNum].chipID = chipID;
 
@@ -160,7 +161,7 @@ bool updateCatFixed(int catNum, bool fixed) {
         printf("ERROR:Cat does not exist\n");
         return false;
     }
-    bool fixedOld= catDB[catNum].isFixed; //Holds onto old fixed state in case new one is invalid
+    const bool fixedOld= catDB[catNum].isFixed; //Holds onto old fixed state in case new one is invalid
 
     catDB[catNum].isFixed = fixed;
 
@@ -171,4 +172,12 @@ bool updateCatFixed(int catNum, bool fixed) {
     }
 
     return true;
+}
+
+///Deletes a cat that is set to the function
+///
+/// @returns blank cat to "delete" a cat in the DB
+Cat deleteCat(){
+    Cat catKiller = {"\0", UNKNOWN, 0, 0, false};
+    return catKiller;
 }

@@ -31,6 +31,4 @@ extern struct Cat generateCat();
 
 extern int printCat(Cat Cat);
 
-void deleteCat(Cat Cat);
-
 #endif //EE205_ANIMAL_FARM_CAT_H

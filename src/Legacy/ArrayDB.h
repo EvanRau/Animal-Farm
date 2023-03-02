@@ -33,4 +33,6 @@ extern bool updateCatID(int catNum, uint32_t chipID);
 
 extern bool updateCatFixed(int catNum, bool Fixed);
 
+extern Cat deleteCat();
+
 #endif //EE205_ANIMAL_FARM_ARRAYDB_H

@@ -118,14 +118,4 @@ int printCat(Cat cat){
     return 0;
 }
 
-///Deletes a Cat & sets values to default
-///
-/// \param cat
-void deleteCat(Cat cat){
-    cat.name = "\0";
-    cat.gender = UNKNOWN;
-    cat.weightInPounds = 0.00;
-    cat.chipID = 0;
-    cat.isFixed = false;
-}
 
