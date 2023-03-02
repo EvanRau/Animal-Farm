@@ -118,4 +118,3 @@ int printCat(Cat cat){
     return 0;
 }
 
-bool updateCatName(int catNum, const char* name){}

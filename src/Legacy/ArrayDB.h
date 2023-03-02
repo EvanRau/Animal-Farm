@@ -23,5 +23,14 @@ extern bool validateCatDB();
 
 extern int findNextBlank();
 
+extern bool updateCatName(int catNum, const char* name);
+
+extern bool updateCatGender(int catNum, Gender gender);
+
+extern bool updateCatWeight(int catNum, float weight);
+
+extern bool updateCatID(int catNum, uint32_t chipID);
+
+extern bool updateCatFixed(int catNum, bool Fixed);
 
 #endif //EE205_ANIMAL_FARM_ARRAYDB_H

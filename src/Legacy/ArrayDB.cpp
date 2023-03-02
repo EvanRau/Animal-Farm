@@ -7,6 +7,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include "ArrayDB.h"
 #include <cstring>
+#include <cstdio>
 
 /// Global array for cat database
 Cat catDB[MAX_CATS];
@@ -54,5 +55,74 @@ bool validateCatDB(){
             return false;
         }
     }
+    return true;
+}
+
+/// Updates the name of a cat in the DB
+///
+/// \param catNum
+/// \param name
+/// @returns false if there is no cat or if the name is invalid. else return true
+bool updateCatName(int catNum, const char* name){
+    if(strlen(catDB[catNum].name) == 0 ){ //Checks that the cat exists in the DB
+        printf("ERROR:Cat does not exist\n");
+        return false;
+    }
+    const char* nameOld = catDB[catNum].name; //Holds onto old name in case new one is invalid
+
+    catDB[catNum].name = name;
+
+    if(!validateCat(catDB[catNum])){ //Checks that new cat is valid. reverts change if not
+        printf("ERROR: Invalid new name! Reverting change.\n");
+        catDB[catNum].name = nameOld;
+        return false;
+    }
+
+    return true;
+}
+
+/// Updates the gender of a cat in the DB
+///
+/// \param catNum
+/// \param gender
+/// @returns false if there is no cat or if the name is invalid. else return true
+bool updateCatGender(int catNum, Gender gender){
+    if(strlen(catDB[catNum].name) == 0 ){ //Checks that the cat exists in the DB
+        printf("ERROR:Cat does not exist\n");
+        return false;
+    }
+    Gender genderOld = catDB[catNum].gender; //Holds onto old gender in case new one is invalid
+
+    catDB[catNum].gender = gender;
+
+    if(!validateCat(catDB[catNum])){ //Checks that new cat is valid. reverts change if not
+        printf("ERROR: Invalid new name! Reverting change.\n");
+        catDB[catNum].gender = genderOld;
+        return false;
+    }
+
+    return true;
+}
+
+/// Updates the weight of a cat in the DB
+///
+/// \param catNum
+/// \param weight
+/// @returns false if there is no cat or if the name is invalid. else return true
+bool updateCatWeight(int catNum, float weight) {
+    if (strlen(catDB[catNum].name) == 0) { //Checks that the cat exists in the DB
+        printf("ERROR:Cat does not exist\n");
+        return false;
+    }
+    float weightOld = catDB[catNum].weightInPounds; //Holds onto old weight in case new one is invalid
+
+    catDB[catNum].weightInPounds = weight;
+
+    if (!validateCat(catDB[catNum])) { //Checks that new cat is valid. reverts change if not
+        printf("ERROR: Invalid new name! Reverting change.\n");
+        catDB[catNum].weightInPounds = weightOld;
+        return false;
+    }
+
     return true;
 }
