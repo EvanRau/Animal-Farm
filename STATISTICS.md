@@ -3,8 +3,8 @@ Project Statistics
 
 | Type | Files | Lines | Bytes | Working Lines | Working Bytes |
 |------|------:|------:|------:|--------------:|--------------:|
-|.h Source|3|90|2600|35|858|
-|.cpp Source|5|314|9252|191|3812|
+|.h Source|3|101|2848|41|1150|
+|.cpp Source|5|461|14094|281|6163|
 |Unit Tests|2|222|11815|158|9597|
 |Python|1|264|7437|174|5949|
 |HTML|1|30|611|n/a|n/a|
@@ -17,10 +17,3 @@ No tags
 
 ## Software Engineering Metrics
 
-Number of commits:  24
-
-Number of unit tests:  7
-
-Number of test points:  104
-
-Automatically generated on Mon Feb 27 00:02:00 2023
