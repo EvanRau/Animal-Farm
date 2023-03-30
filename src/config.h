@@ -21,7 +21,7 @@ using namespace std;
 
 /// Format a header for dump function
 #define PRINT_HEADING_FOR_DUMP() \
-std::cout << setfill('=') << setw(80) << endl;
+cout << setfill('=') << setw(80) << endl;
 
 /// Format a line for dumping the members of a class to the console.
 /// Setup the fields for printing (space pad, left justify, etc.)
