@@ -2,7 +2,7 @@
 //         University of Hawaii, College of Engineering
 //         Animal Farm - EE 205 - Spr 2023
 //
-/// @file    test_Legacy_epicCats.cpp
+/// @file    test_Animal.cpp
 /// @author  Evan Rau <evanrau@hawaii.edu>
 //////////////////////////////////////////////////////////////////////////////
 
@@ -11,7 +11,6 @@
 #include <boost/test/tools/output_test_stream.hpp>
 #include <boost/test/unit_test.hpp>
 
-#include "../src/Utility/Gender.h"
 #include "../src/Animal/Animal.h"
 
 using namespace std;
@@ -31,4 +30,4 @@ BOOST_AUTO_TEST_SUITE( test_Animal )
 
     }
 
-}
+BOOST_AUTO_TEST_SUITE_END()

@@ -11,17 +11,17 @@
 
 ///Gets the kingdom of a given animal
 ///@returns animal.kingdom (Is always Animalia)
-std::string_view getKingdom(Animal animal){
+std::string_view getKingdom(const Animal& animal){
     return animal.kingdom;
 }
 
-std::string info(Animal animal){
-
+std::string info(const Animal& animal){
+    return animal.info;
 }
 
 ///Gets the gender of a given animal
 ///@returns animal.gender
-Gender getGender(Animal animal){
+Gender getGender(const Animal& animal){
     return animal.gender;
 }
 
@@ -32,7 +32,7 @@ void setGender(Animal animal, Gender setGender){
     }
 }
 
-bool validate(Animal animal){
+bool validate(const Animal& animal){
     return !getKingdom(animal).empty() && !info(animal).empty() && validateGender(getGender(animal));
 }
 

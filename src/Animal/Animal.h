@@ -27,15 +27,15 @@ class Animal {
         std::string info = "An animal";
 };
 
-extern std::string_view getKingdom(Animal animal);
+extern std::string_view getKingdom(const Animal& animal);
 
-extern Gender getGender(Animal animal);
+extern Gender getGender(const Animal& animal);
 
 extern void setGender(Animal animal, Gender setGender);
 
-extern bool validate(Animal animal);
+extern bool validate(const Animal& animal);
 
-extern std::string info(Animal animal);
+extern std::string info(const Animal& animal);
 
 extern void dump(Animal animal);
 

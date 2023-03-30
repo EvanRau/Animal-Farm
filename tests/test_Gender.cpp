@@ -25,4 +25,4 @@ BOOST_AUTO_TEST_SUITE( test_Gender )
         testGender = static_cast<Gender>(2);    BOOST_CHECK_EQUAL(validateGender(testGender), true);
         testGender = static_cast<Gender>(10);    BOOST_CHECK_EQUAL(validateGender(testGender), false);
     }
-}
+BOOST_AUTO_TEST_SUITE_END()
