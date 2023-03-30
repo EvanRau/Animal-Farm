@@ -25,7 +25,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DDEBUG")
 
 set(CMAKE_CXX_CLANG_TIDY
-      clang-tidy;
+      clang-tidy --extra-arg-before=-std=c++17;
       )
 
 set(DOC_BUILD_DIR "${PROJECT_BINARY_DIR}/generated_docs")
@@ -71,7 +71,7 @@ if (DOXYGEN_FOUND)
    set(DOXYGEN_SOURCE_BROWSER YES)
    set(DOXYGEN_STRIP_CODE_COMMENTS NO)
    set(DOXYGEN_CLANG_ASSISTED_PARSING YES)
-   set(DOXYGEN_CLANG_OPTIONS "-I /usr/include/llvm -I /usr/lib/clang/14.0.6/include" )
+   set(DOXYGEN_CLANG_OPTIONS "-I /usr/include/llvm -I /usr/lib/clang/14.0.6/include -I -std=c++17" )
 
    # Index
 
