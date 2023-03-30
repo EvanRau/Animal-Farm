@@ -24,7 +24,7 @@ BOOST_AUTO_TEST_SUITE( test_Animal )
         Animal test2(Gender::MALE);
         BOOST_CHECK_EQUAL(test2.validate(), true); //Constructor with argument
     }
-    BOOST_AUTO_TEST_CASE( test_setGender ) { //@todo research method to test dump; checking visually for now
+    BOOST_AUTO_TEST_CASE( test_setGender ) {
         Animal test1;
         test1.setGender(Gender::MALE);  BOOST_CHECK_EQUAL(genderAsString(test1.getGender()), "MALE" ); //Starts as unknown; sets
         Animal test2(Gender::MALE);
