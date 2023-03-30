@@ -17,15 +17,18 @@
 using namespace std;
 
 BOOST_AUTO_TEST_SUITE( test_Animal )
-        Animal testAnimal;
+
+
     BOOST_AUTO_TEST_CASE( test_validate ) {
+        Animal testAnimal;
         BOOST_CHECK_EQUAL(validate(testAnimal), true); //Declared animal with no modifications must be true by default
         testAnimal.gender = static_cast<Gender>(10);    BOOST_CHECK_EQUAL(validate(testAnimal), false); //Invalid gender
         testAnimal.gender = Gender::FEMALE;
-        testAnimal.Kingdom = "";  BOOST_CHECK_EQUAL(validate(testAnimal), false); //Invalid Kingdom
-        testAnimal.Kingdom = "Animalia";
+        testAnimal.kingdom = "";  BOOST_CHECK_EQUAL(validate(testAnimal), false); //Invalid kingdom
+        testAnimal.kingdom = "Animalia";
         testAnimal.info = "";   BOOST_CHECK_EQUAL(validate(testAnimal), false); //Invalid Info
         testAnimal.info = "An animal";
 
     }
+
 }

@@ -14,13 +14,15 @@
 #include "../Utility/Gender.h"
 #include <string>
 
+
+
 ///Properties of an animal. Includes its gender and its kingdom
 class Animal {
     public:
         ///Gender of animal; Unknown by default
         Gender gender = Gender::UNKNOWN_GENDER;
-        ///Kingdom of animal (always Animalia)
-        std::string_view Kingdom = "Animalia";
+        ///kingdom of animal (always Animalia)
+        std::string_view kingdom = "Animalia";
         ///Info of an animal; "An animal" by default
         std::string info = "An animal";
 };
@@ -29,7 +31,7 @@ extern std::string_view getKingdom(Animal animal);
 
 extern Gender getGender(Animal animal);
 
-extern void setGender(Animal animal);
+extern void setGender(Animal animal, Gender setGender);
 
 extern bool validate(Animal animal);
 
