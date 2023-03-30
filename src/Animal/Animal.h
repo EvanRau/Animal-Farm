@@ -32,11 +32,11 @@ class Animal {
         ///Constructs an Animal with a known gender
         explicit Animal(Gender gender) : gender(gender) {
         }
-        static string_view getKingdom();
+        [[nodiscard]] string_view getKingdom() const noexcept;
 
         ///Pulls gender of given animal
         ///@returns gender of animal
-        Gender getGender(){
+        [[nodiscard]] Gender getGender() const noexcept{
             return gender;
         }
         ///Sets gender of animal with unknown gender
@@ -48,11 +48,11 @@ class Animal {
                 this->gender = setGender;
         }
 
-        bool validate();
+        [[nodiscard]] bool validate() const noexcept;
 
-        void dump();
+        void dump() const noexcept;
 
-        static string_view info();
+        [[nodiscard]] string_view info() const noexcept;
 };
 
 

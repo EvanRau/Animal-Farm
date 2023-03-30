@@ -15,18 +15,18 @@ using namespace std;
 
 ///Gives kingdom of animal
 ///@returns Only possible kingdom (Animalia)
-string_view Animal::getKingdom(){
+string_view Animal::getKingdom() const noexcept{
     return "Animalia";
 }
 
 ///Checks that given animal is valid
 ///@returns true if animal is valid, false if not
-bool Animal::validate(){
+bool Animal::validate() const noexcept{
     return !getKingdom().empty() && !info().empty() && validateGender(gender);
 }
 
 ///Prints out data on given animal
-void Animal::dump(){
+void Animal::dump() const noexcept{
     cout << "========================================" << endl
          << setw(10) << left << "Animal" << setw(15) << "kingdom" << setw(20) << Animal::getKingdom() << endl
          << setw(10) << left << "Animal" << setw(15) << "gender" << setw(20) << genderAsString(gender) << endl;
@@ -34,6 +34,6 @@ void Animal::dump(){
 
 ///Provides information on animal
 ///@returns "An animal" for now
-string_view Animal::info(){
+string_view Animal::info() const noexcept{
     return "An animal";
 }
