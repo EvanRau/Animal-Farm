@@ -19,15 +19,17 @@ BOOST_AUTO_TEST_SUITE( test_Animal )
 
 
     BOOST_AUTO_TEST_CASE( test_validate ) {
-        Animal testAnimal;
-        BOOST_CHECK_EQUAL(validate(testAnimal), true); //Declared animal with no modifications must be true by default
-        testAnimal.gender = static_cast<Gender>(10);    BOOST_CHECK_EQUAL(validate(testAnimal), false); //Invalid gender
-        testAnimal.gender = Gender::FEMALE;
-        testAnimal.kingdom = "";  BOOST_CHECK_EQUAL(validate(testAnimal), false); //Invalid kingdom
-        testAnimal.kingdom = "Animalia";
-        testAnimal.info = "";   BOOST_CHECK_EQUAL(validate(testAnimal), false); //Invalid Info
-        testAnimal.info = "An animal";
-
+        Animal test1;
+        BOOST_CHECK_EQUAL(test1.validate(), true); //Constructor with no arguments
+        Animal test2(Gender::MALE);
+        BOOST_CHECK_EQUAL(test2.validate(), true); //Constructor with argument
     }
+    BOOST_AUTO_TEST_CASE( test_dump ) { //@todo research method to test dump; checking visually for now
+        Animal test1;
+        test1.dump();
+        Animal test2(Gender::MALE);
+        test2.dump();
+}
+
 
 BOOST_AUTO_TEST_SUITE_END()

@@ -13,11 +13,10 @@
 
 #include "../Utility/Gender.h"
 
-#include <iostream>
-#include <string>
 #include <iomanip>
+#include <string>
 
-#define quote(x) #x
+
 using namespace std;
 
 
@@ -25,36 +24,38 @@ using namespace std;
 class Animal {
     private:
         ///Gender of animal; Unknown by default
-        Gender gender = Gender::UNKNOWN_GENDER;
-        ///kingdom of animal (always Animalia)
-        string_view kingdom = "Animalia";
+        Gender gender;
     public:
+        ///Constructs an Animal with unknown gender
         Animal() : gender(Gender::UNKNOWN_GENDER) {
         }
+        ///Constructs an Animal with a known gender
         explicit Animal(Gender gender) : gender(gender) {
         }
-        static string_view getKingdom(const Animal& animal){
-            return animal.kingdom;
+        static string_view getKingdom();
+
+        ///Pulls gender of given animal
+        ///@returns gender of animal
+        Gender getGender(){
+            return gender;
         }
-        static Gender getGender(const Animal& animal){
-        return animal.gender;
-        }
-        static void setGender(Animal animal, Gender setGender){
-        if(animal.gender == Gender::UNKNOWN_GENDER){
-            animal.gender = setGender;
+        ///Sets gender of animal with unknown gender
+        ///Throws exception if gender is not unknown
+        void setGender(const Gender setGender){
+            if(this->gender != Gender::UNKNOWN_GENDER) {
+                throw runtime_error("Gender already set");
             }
+                this->gender = setGender;
         }
-        static bool validate(const Animal& animal){
-            return !Animal::getKingdom(animal).empty() && validateGender(Animal::getGender(animal));
-        }
-        static void dump(const Animal& animal){
-            cout << "=============================================" << endl
-                 << setw(10) << left << quote(animal) << setw(15) << "kingdom" << setw(20) << Animal::getKingdom(animal) << endl
-                 << setw(10) << left << quote(animal) << setw(15) << "gender" << setw(20) << genderAsString(Animal::getGender(animal)) << endl;
-        }
+
+        bool validate();
+
+        void dump();
+
+        static string_view info();
 };
 
-extern string info(const Animal& animal);
+
 
 
 #endif //EE205_ANIMAL_FARM_ANIMAL_H

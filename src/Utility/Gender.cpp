@@ -11,6 +11,7 @@
 #include <cstdlib>
 #include <ctime>
 
+///All gender values in string form
 const char* genders[] = {"UNKNOWN_GENDER", "MALE", "FEMALE"};
 
 ///Generates a random gender

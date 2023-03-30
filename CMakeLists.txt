@@ -71,7 +71,7 @@ if (DOXYGEN_FOUND)
    set(DOXYGEN_SOURCE_BROWSER YES)
    set(DOXYGEN_STRIP_CODE_COMMENTS NO)
    set(DOXYGEN_CLANG_ASSISTED_PARSING YES)
-   set(DOXYGEN_CLANG_OPTIONS "-I /usr/include/llvm -I /usr/lib/clang/14.0.6/include -I -std=c++17" )
+   set(DOXYGEN_CLANG_OPTIONS "-I /usr/include/llvm -I /usr/lib/clang/14.0.6/include -std=c++17" )
 
    # Index
 
