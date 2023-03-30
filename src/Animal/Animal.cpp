@@ -8,6 +8,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "Animal.h"
+#include "../config.h"
 #include <iomanip>
 #include <iostream>
 #include <string>
@@ -27,9 +28,9 @@ bool Animal::validate() const noexcept{
 
 ///Prints out data on given animal
 void Animal::dump() const noexcept{
-    cout << "========================================" << endl
-         << setw(10) << left << "Animal" << setw(15) << "kingdom" << setw(20) << Animal::getKingdom() << endl
-         << setw(10) << left << "Animal" << setw(15) << "gender" << setw(20) << genderAsString(gender) << endl;
+    PRINT_HEADING_FOR_DUMP()
+    FORMAT_LINE_FOR_DUMP( "Animal", "kingdom" ) << getKingdom() << endl;
+    FORMAT_LINE_FOR_DUMP( "Animal", "gender" ) << gender << endl;
 }
 
 ///Provides information on animal
