@@ -20,6 +20,8 @@ Gender newRandomGender(){
     return static_cast<Gender>(randGender); //Returns random number as enum
 }
 
+///Tests that given gender is valid
+///@returns false if gender is invalid
 bool validateGender(Gender gender){
     const int genderNum = static_cast<int>(gender); //Takes numeric value for enum and applies to int
     return genderNum >= 0 && genderNum < TOTAL_GENDERS; //Returns true if numeric value is within range of known genders
