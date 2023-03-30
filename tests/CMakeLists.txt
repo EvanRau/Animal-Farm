@@ -19,7 +19,7 @@ include_directories (${Boost_INCLUDE_DIRS})
 if (Boost_UNIT_TEST_FRAMEWORK_FOUND)
    message(STATUS "Generating unit tests using BOOST Unit Test Framework")
 
-   add_executable ( All_Boost_Tests test_Trim.cpp ../src/Utility/Trim.cpp ../src/Utility/Trim.h ../src/Legacy/Cat.cpp ../src/Legacy/ArrayDB.cpp ../src/Legacy/Cat.h ../src/Legacy/ArrayDB.h test_Legacy_epicCats.cpp)
+   add_executable ( All_Boost_Tests test_Trim.cpp ../src/Utility/Trim.cpp ../src/Utility/Trim.h ../src/Legacy/Cat.cpp ../src/Legacy/ArrayDB.cpp ../src/Legacy/Cat.h ../src/Legacy/ArrayDB.h test_Legacy_epicCats.cpp ../src/config.h)
    target_link_libraries (All_Boost_Tests ${Boost_LIBRARIES})
 
 else (Boost_UNIT_TEST_FRAMEWORK_FOUND)

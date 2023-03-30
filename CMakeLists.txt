@@ -154,7 +154,7 @@ endif (DOXYGEN_FOUND)
 
 message(STATUS "PROJECT_BINARY_DIR = [${PROJECT_BINARY_DIR}]")
 
-add_executable(hello src/hello.cpp src/Utility/Trim.cpp src/Utility/Trim.h)
-add_executable(epicCats src/Legacy/epicCats.cpp src/Legacy/Cat.cpp src/Legacy/ArrayDB.cpp src/Legacy/Cat.h src/Legacy/ArrayDB.h)
+add_executable(hello src/hello.cpp src/Utility/Trim.cpp src/Utility/Trim.h src/config.h)
+add_executable(epicCats src/Legacy/epicCats.cpp src/Legacy/Cat.cpp src/Legacy/ArrayDB.cpp src/Legacy/Cat.h src/Legacy/ArrayDB.h src/config.h)
 
 add_subdirectory(tests)

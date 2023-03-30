@@ -8,6 +8,7 @@
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
 
+#include "config.h"
 #include <iostream>
 
 /// A Hello World program
