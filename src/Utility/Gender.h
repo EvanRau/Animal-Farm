@@ -11,6 +11,8 @@
 #define EE205_ANIMAL_FARM_GENDER_H
 
 ///Total number of values in gender enum; change this value along with additions to Gender
+#include <string>
+
 #define TOTAL_GENDERS 3
 
 /// #Gender that includes but a few of the known cat genders
@@ -24,5 +26,6 @@ extern Gender newRandomGender();
 
 extern bool validateGender(Gender gender);
 
+extern std::string genderAsString(Gender gender);
 
 #endif //EE205_ANIMAL_FARM_GENDER_H
