@@ -90,8 +90,10 @@ Node* SingleLinkedList::getRandomNode() const noexcept{
 ///Dumps all data from nodes within the list
 void SingleLinkedList::dump() const noexcept{
     Node* curNode = headNode;
+    PRINT_HEADING_FOR_DUMP()
     Container::dump();
     FORMAT_LINE_FOR_DUMP("SingleLinkedList", "headNode") << headNode << std::endl;
+    PRINT_HEADING_FOR_DUMP()
     while(curNode != nullptr){
         curNode->dump();
         curNode = curNode->next;
