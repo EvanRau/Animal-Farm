@@ -16,6 +16,9 @@ class Container {
 private:
     size_t count;
 public:
+    Container() {
+    }
+
     virtual bool isEmpty() = 0;
 
     virtual size_t size() = 0;
