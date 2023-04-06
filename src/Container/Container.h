@@ -16,7 +16,7 @@ class Container {
 private:
     size_t count;
 public:
-    Container() {
+    Container(){
     }
 
     virtual bool isEmpty() = 0;
@@ -35,5 +35,8 @@ public:
 
     virtual bool validate() = 0;
 };
+
+
+
 
 #endif //EE205_ANIMAL_FARM_CONTAINER_H

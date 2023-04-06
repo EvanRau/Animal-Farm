@@ -20,9 +20,11 @@ using namespace std;
 
 class Node{
     friend class SingleLinkedList;
+private:
+    Node* next;
 
 public:
-    Node* next; //@todo repair functionality in SingleLinkedList class so next can be accessed while protected
+     //@todo repair functionality in SingleLinkedList class so next can be accessed while protected
 
     ///Constructs a node that points to nullptr
     Node() : next(nullptr){

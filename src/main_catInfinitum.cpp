@@ -7,8 +7,29 @@
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <iostream>
+#include "Container/SingleLinkedList.h"
+#include "Animal/Animal.h"
+#include "Utility/Gender.h"
+
 
 int main(){
-    std::cout<<"Hello World"<<std::endl;
+    SingleLinkedList linkedList;
+    for(int i=0; i<10; i++){
+        Gender tempGender;
+        if(i%2==0){
+            tempGender = Gender::MALE;
+        }
+        else{
+            tempGender = Gender::FEMALE;
+        }
+        Node* newNode = new Animal(tempGender);
+        linkedList.add(newNode);
+    }
+    if(linkedList.validate()) {
+        linkedList.dump();
+    }
+    else{
+        std::cout<<"List Invalid."<<std::endl;
+    }
+
 }

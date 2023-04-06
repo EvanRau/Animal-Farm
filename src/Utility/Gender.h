@@ -11,9 +11,11 @@
 #define EE205_ANIMAL_FARM_GENDER_H
 
 ///Total number of values in gender enum; change this value along with additions to Gender
-#include <string>
-#include <stdexcept>
 #include "../config.h"
+#include <stdexcept>
+#include <string>
+
+
 
 #define TOTAL_GENDERS 3
 

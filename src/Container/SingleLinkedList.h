@@ -14,7 +14,23 @@
 #include "Container.h"
 
 class SingleLinkedList : public Container{
+    Node* headNode = nullptr;
+public:
+    virtual bool isEmpty();
 
+    virtual size_t size();
+
+    virtual bool isIn(const Node *aNode);
+
+    virtual void add(Node *newNode);
+
+    virtual void removeAll();
+
+    virtual void getRandomNode();
+
+    virtual void dump();
+
+    virtual bool validate();
 };
 
 
