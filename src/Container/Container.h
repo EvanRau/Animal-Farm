@@ -39,13 +39,18 @@ public:
     ///Abstract function for container
     ///@see SingleLinkedList.cpp for documentation
     virtual void getRandomNode() = 0;
-    ///Abstract function for container
-    ///@see SingleLinkedList.cpp for documentation
+    ///Dumps the information for the given Container
     virtual void dump() const noexcept{
         FORMAT_LINE_FOR_DUMP( "Object", "class" ) << boost::core::demangled_name( BOOST_CORE_TYPEID( *this )) << std::endl ;
         FORMAT_LINE_FOR_DUMP( "Object", "this" ) << this << std::endl ;
         FORMAT_LINE_FOR_DUMP( "container", "count" ) << this << std::endl;
     }
+    /// This will print something unique for each Container
+    ///
+    /// #### Sample Output
+    /**@verbatim
+    The Container at 0x7ffff375ba90
+    @endverbatim */
     virtual std::string_view info() const noexcept{
         // Put the address of this object into a string
         std::stringstream stringStream;
