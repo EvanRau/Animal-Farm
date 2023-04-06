@@ -35,6 +35,18 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
         testList.add(testNode);
         testList.removeAll(); BOOST_CHECK_EQUAL(testList.isEmpty(), true );
     }
+    BOOST_AUTO_TEST_CASE( test_randomNode ) {
+        SingleLinkedList testList;  BOOST_CHECK_EQUAL(testList.getRandomNode(), nullptr);
+    }
+    BOOST_AUTO_TEST_CASE( test_isIn ) {
+        SingleLinkedList testList;
+        Node* bingus = new Animal();
+        testList.add(bingus);
+        Node* testNode = new Animal();
+        testList.add(testNode); BOOST_CHECK_EQUAL(testList.isIn(bingus), true);
+        Node* fakeNode = new Animal();  BOOST_CHECK_EQUAL(testList.isIn(fakeNode), false);
+    }
+
 
 
 BOOST_AUTO_TEST_SUITE_END()
