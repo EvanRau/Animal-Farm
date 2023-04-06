@@ -22,4 +22,16 @@ size_t size(){
         count++;
         tracker = tracker->next;
     }
+    return count;
+}
+
+bool isIn(const Node* aNode){
+    Node* tracker = headNode;
+    while(tracker != nullptr){
+        if(tracker->next == aNode){
+            return true;
+        }
+        tracker = tracker->next;
+    }
+    return false;
 }

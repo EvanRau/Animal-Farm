@@ -11,8 +11,9 @@
 #define EE205_ANIMAL_FARM_ANIMAL_H
 
 
-#include "../Utility/Gender.h"
+
 #include "../Container/Node.h"
+#include "../Utility/Gender.h"
 #include <iomanip>
 #include <string>
 

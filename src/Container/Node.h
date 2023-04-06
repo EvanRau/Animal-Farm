@@ -12,7 +12,6 @@
 
 
 #include "../config.h"
-#include "SingleLinkedList.h"
 #include <boost/core/typeinfo.hpp> // For typeinfo()
 #include <iostream>
 #include <string>
@@ -20,8 +19,8 @@
 using namespace std;
 
 class Node{
-protected:
-    Node* next;
+    friend class SingleLinkedList;
+
 public:
     ///Constructs a node that points to nullptr
     Node() : next(nullptr){
@@ -41,7 +40,7 @@ public:
     }
 
 
-    friend class SingleLinkedList;
+    Node* next;
 };
 
 #endif //EE205_ANIMAL_FARM_NODE_H
