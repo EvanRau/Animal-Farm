@@ -14,22 +14,12 @@
 ///Test function for implementation of spec
 int main(){
     SingleLinkedList linkedList;
-    for(int i=0; i<10; i++){
-        Gender tempGender;
-        if(i%2==0){
-            tempGender = Gender::MALE;
-        }
-        else{
-            tempGender = Gender::FEMALE;
-        }
-        Node* newNode = new Animal(tempGender);
-        linkedList.add(newNode);
+    for(int i=0; i<10; i++) {
+        linkedList.add( new Animal( newRandomGender() )) ;
     }
     if(linkedList.validate()) {
         linkedList.dump();
-    }
-    else{
+    } else {
         std::cout<<"List Invalid."<<std::endl;
     }
-
 }

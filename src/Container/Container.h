@@ -14,7 +14,7 @@
 
 ///Properties of a container
 class Container {
-private:
+protected:
     ///stores number of items in given container
     size_t count;
 public:
@@ -23,13 +23,13 @@ public:
     }
     ///Abstract function for container
     ///@see SingleLinkedList.cpp for documentation
-    virtual bool isEmpty() = 0;
+    virtual bool isEmpty() const noexcept = 0;
     ///Abstract function for container
     ///@see SingleLinkedList.cpp for documentation
-    virtual size_t size() = 0;
+    virtual size_t size() const noexcept = 0;
     ///Abstract function for container
     ///@see SingleLinkedList.cpp for documentation
-    virtual bool isIn(const Node *aNode) = 0;
+    virtual bool isIn(const Node *aNode) const = 0;
     ///Abstract function for container
     ///@see SingleLinkedList.cpp for documentation
     virtual void add(Node *newNode) = 0;
@@ -38,12 +38,12 @@ public:
     virtual void removeAll() = 0;
     ///Abstract function for container
     ///@see SingleLinkedList.cpp for documentation
-    virtual void getRandomNode() = 0;
+    virtual Node* getRandomNode() const noexcept = 0;
     ///Dumps the information for the given Container
     virtual void dump() const noexcept{
         FORMAT_LINE_FOR_DUMP( "Object", "class" ) << boost::core::demangled_name( BOOST_CORE_TYPEID( *this )) << std::endl ;
         FORMAT_LINE_FOR_DUMP( "Object", "this" ) << this << std::endl ;
-        FORMAT_LINE_FOR_DUMP( "container", "count" ) << this << std::endl;
+        FORMAT_LINE_FOR_DUMP( "container", "count" ) << size() << std::endl;
     }
     /// This will print something unique for each Container
     ///
@@ -51,11 +51,12 @@ public:
     /**@verbatim
     The Container at 0x7ffff375ba90
     @endverbatim */
-    virtual std::string_view info() const noexcept{
+    virtual std::string info() const noexcept{
         // Put the address of this object into a string
         std::stringstream stringStream;
         stringStream << this;
         std::string theAddressOfThis = stringStream.str();
+
         std::string infoString {};
         // Print the class
         infoString += "The ";
@@ -66,10 +67,8 @@ public:
     };
     ///Abstract function for container
     ///@see SingleLinkedList.cpp for documentation
-    virtual bool validate() = 0;
+    virtual bool validate() const noexcept = 0;
 };
-
-
 
 
 #endif //EE205_ANIMAL_FARM_CONTAINER_H

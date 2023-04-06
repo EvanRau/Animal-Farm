@@ -15,24 +15,25 @@
 
 ///Properties of a linked list; inherits functions from Container
 class SingleLinkedList : public Container{
+protected:
     ///The head node of a linked list; initialized as nullptr
     Node* headNode = nullptr;
 public:
-    virtual bool isEmpty();
+    virtual bool isEmpty() const noexcept;
 
-    virtual size_t size();
+    virtual size_t size() const noexcept;
 
-    virtual bool isIn(const Node *aNode);
+    virtual bool isIn(const Node *aNode) const;
 
     virtual void add(Node *newNode);
 
     virtual void removeAll();
 
-    virtual void getRandomNode();
+    virtual Node* getRandomNode() const noexcept;
 
-    virtual void dump();
+    virtual void dump() const noexcept;
 
-    virtual bool validate();
+    virtual bool validate() const noexcept;
 };
 
 

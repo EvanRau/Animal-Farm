@@ -53,7 +53,7 @@ class Animal : public Node {
 
         void dump() const noexcept;
 
-        [[nodiscard]] string_view info() const noexcept;
+        [[nodiscard]] string info() const noexcept;
 };
 
 

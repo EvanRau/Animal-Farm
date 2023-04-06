@@ -12,25 +12,25 @@
 
 ///Checks if a given list contains any nodes
 ///@returns true if no nodes are linked
-bool SingleLinkedList::isEmpty(){
+bool SingleLinkedList::isEmpty() const noexcept{
     return headNode == nullptr;
 }
 
 ///Gets the total size of a linked list
 ///@returns the number of nodes in the list
-size_t SingleLinkedList::size(){
+size_t SingleLinkedList::size() const noexcept{
     Node* tracker = headNode;
-    size_t count = 0;
+    size_t nodeCount = 0;
     while (tracker != nullptr){
-        count++;
+        nodeCount++;
         tracker = tracker->next;
     }
-    return count;
+    return nodeCount;
 }
 
 ///Checks if a given node is in a linked list
 ///@returns true if the list contains the given node
-bool SingleLinkedList::isIn(const Node* aNode){
+bool SingleLinkedList::isIn(const Node* aNode) const{
     Node* tracker = headNode;
     while(tracker != nullptr){
         if(tracker->next == aNode){
@@ -74,20 +74,24 @@ void SingleLinkedList::removeAll(){
 }
 
 ///Gets a random node from within the list
-void SingleLinkedList::getRandomNode(){
+Node* SingleLinkedList::getRandomNode() const noexcept{
     size_t const listSize = size();
+    if(listSize==0){
+        return nullptr;
+    }
     size_t const nodePlace = rand() % listSize;
     Node* randNode = headNode;
     for(size_t i = 0; i < nodePlace; i++){
         randNode = randNode->next;
     }
-    randNode->dump();
+    return randNode;
 }
 
 ///Dumps all data from nodes within the list
-void SingleLinkedList::dump(){
+void SingleLinkedList::dump() const noexcept{
     Node* curNode = headNode;
     Container::dump();
+    FORMAT_LINE_FOR_DUMP("SingleLinkedList", "headNode") << headNode << std::endl;
     while(curNode != nullptr){
         curNode->dump();
         curNode = curNode->next;
@@ -96,7 +100,7 @@ void SingleLinkedList::dump(){
 
 ///Validates the linked list and the nodes within it
 ///@returns true if the list is valid
-bool SingleLinkedList::validate(){
+bool SingleLinkedList::validate() const noexcept{
     size_t const nodeSize = size();
     Node* tracker = headNode;
     if((nodeSize==0&&isEmpty()&&headNode==nullptr) || (nodeSize>0&&!isEmpty()&&headNode!=nullptr)){

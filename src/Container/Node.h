@@ -41,7 +41,7 @@ public:
     virtual void dump() const{
         FORMAT_LINE_FOR_DUMP( "Object", "class" ) << boost::core::demangled_name( BOOST_CORE_TYPEID( *this )) << std::endl ;
         FORMAT_LINE_FOR_DUMP( "Object", "this" ) << this << std::endl ;
-        FORMAT_LINE_FOR_DUMP( "Node", "next" ) << this << std::endl;
+        FORMAT_LINE_FOR_DUMP( "Node", "next" ) << this->next << std::endl;
     }
     ///Validates the node
     virtual bool validate() const{
@@ -54,7 +54,7 @@ public:
     /**@verbatim
     The Node at 0x7ffff375ba90
     @endverbatim */
-    virtual string_view info() const{
+    virtual string info() const{
         // Put the address of this object into a string
         std::stringstream stringStream;
         stringStream << this;
