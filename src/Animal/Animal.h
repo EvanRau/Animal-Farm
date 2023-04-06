@@ -12,7 +12,7 @@
 
 
 #include "../Utility/Gender.h"
-
+#include "../Container/Node.h"
 #include <iomanip>
 #include <string>
 
@@ -21,7 +21,7 @@ using namespace std;
 
 
 ///Properties of an animal. Includes its gender and its kingdom
-class Animal {
+class Animal : public Node {
     private:
         ///Gender of animal; Unknown by default
         Gender gender;

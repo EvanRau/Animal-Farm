@@ -10,9 +10,13 @@
 #ifndef EE205_ANIMAL_FARM_NODE_H
 #define EE205_ANIMAL_FARM_NODE_H
 
-#include <boost/core/typeinfo.hpp> // For typeinfo()
+
 #include "../config.h"
+#include <boost/core/typeinfo.hpp> // For typeinfo()
+#include <iostream>
 #include <string>
+
+using namespace std;
 
 class Node{
 protected:
@@ -22,8 +26,7 @@ public:
     Node() : next(nullptr){
     }
     ///Deconstructs a node
-    virtual ~Node(){
-    }
+    virtual ~Node()= default;
     virtual void reset(){
         next = nullptr;
     }
