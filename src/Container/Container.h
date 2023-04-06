@@ -12,10 +12,13 @@
 
 #include "Node.h"
 
+///Properties of a container
 class Container {
 private:
+    ///stores number of items in given container
     size_t count;
 public:
+    ///Generates a default container
     Container(){
     }
 

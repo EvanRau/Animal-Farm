@@ -18,13 +18,15 @@
 
 using namespace std;
 
+///Properties of a node
 class Node{
+    ///Linked lists need access to pointed nodes
     friend class SingleLinkedList;
 private:
+    ///Node that is pointed to by current node
     Node* next;
 
 public:
-     //@todo repair functionality in SingleLinkedList class so next can be accessed while protected
 
     ///Constructs a node that points to nullptr
     Node() : next(nullptr){
@@ -34,11 +36,13 @@ public:
     virtual void reset(){
         next = nullptr;
     }
+    ///Dumps the contents of the node
     virtual void dump() const{
         FORMAT_LINE_FOR_DUMP( "Object", "class" ) << boost::core::demangled_name( BOOST_CORE_TYPEID( *this )) << std::endl ;
         FORMAT_LINE_FOR_DUMP( "Object", "this" ) << this << std::endl ;
         FORMAT_LINE_FOR_DUMP( "Node", "next" ) << this << std::endl;
     }
+    ///Validates the node
     virtual bool validate() const{
         return true;
     }

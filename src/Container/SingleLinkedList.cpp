@@ -10,11 +10,14 @@
 #include "SingleLinkedList.h"
 
 
-
+///Checks if a given list contains any nodes
+///@returns true if no nodes are linked
 bool SingleLinkedList::isEmpty(){
     return headNode == nullptr;
 }
 
+///Gets the total size of a linked list
+///@returns the number of nodes in the list
 size_t SingleLinkedList::size(){
     Node* tracker = headNode;
     size_t count = 0;
@@ -25,6 +28,8 @@ size_t SingleLinkedList::size(){
     return count;
 }
 
+///Checks if a given node is in a linked list
+///@returns true if the list contains the given node
 bool SingleLinkedList::isIn(const Node* aNode){
     Node* tracker = headNode;
     while(tracker != nullptr){
@@ -36,11 +41,13 @@ bool SingleLinkedList::isIn(const Node* aNode){
     return false;
 }
 
+///Adds a new node to the linked list
 void SingleLinkedList::add(Node* newNode){
     newNode->next = headNode;
     headNode = newNode;
 }
 
+///Empties all nodes from the list
 void SingleLinkedList::removeAll(){
     while(headNode != nullptr) {
         Node *tempNode = headNode;
@@ -49,6 +56,7 @@ void SingleLinkedList::removeAll(){
     }
 }
 
+///Gets a random node from within the list
 void SingleLinkedList::getRandomNode(){
     size_t const listSize = size();
     size_t const nodePlace = rand() % listSize;
@@ -59,6 +67,7 @@ void SingleLinkedList::getRandomNode(){
     randNode->dump();
 }
 
+///Dumps all data from nodes within the list
 void SingleLinkedList::dump(){
     Node* curNode = headNode;
     while(curNode != nullptr){
@@ -67,6 +76,8 @@ void SingleLinkedList::dump(){
     }
 }
 
+///Validates the linked list
+///@returns true if the list is valid
 bool SingleLinkedList::validate(){
     size_t const nodeSize = size();
     size_t chainSize = 0;

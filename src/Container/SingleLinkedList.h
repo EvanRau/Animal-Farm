@@ -13,7 +13,9 @@
 
 #include "Container.h"
 
+///Properties of a linked list; inherits functions from Container
 class SingleLinkedList : public Container{
+    ///The head node of a linked list; initialized as nullptr
     Node* headNode = nullptr;
 public:
     virtual bool isEmpty();
