@@ -23,7 +23,7 @@ using namespace std;
 
 ///Properties of an animal. Includes its gender and its kingdom
 class Animal : public Node {
-    private:
+    protected:
         ///Gender of animal; Unknown by default
         Gender gender;
     public:

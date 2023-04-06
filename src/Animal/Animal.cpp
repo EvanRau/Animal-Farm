@@ -29,8 +29,9 @@ bool Animal::validate() const noexcept{
 ///Prints out data on given animal
 void Animal::dump() const noexcept{
     PRINT_HEADING_FOR_DUMP()
-    FORMAT_LINE_FOR_DUMP( "Animal", "kingdom" ) << getKingdom() << endl;
-    FORMAT_LINE_FOR_DUMP( "Animal", "gender" ) << gender << endl;
+    Node::dump() ;
+    FORMAT_LINE_FOR_DUMP( "Animal", "kingdom" ) << getKingdom() << endl ;
+    FORMAT_LINE_FOR_DUMP( "Animal", "gender" ) << getGender() << endl ;
 }
 
 ///Provides information on animal

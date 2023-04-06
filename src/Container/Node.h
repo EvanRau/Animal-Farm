@@ -48,6 +48,26 @@ public:
         return true;
     }
 
+    /// This will print something unique for each Node
+    ///
+    /// #### Sample Output
+    /**@verbatim
+    The Node at 0x7ffff375ba90
+    @endverbatim */
+    virtual string_view info() const{
+        // Put the address of this object into a string
+        std::stringstream stringStream;
+        stringStream << this;
+        std::string theAddressOfThis = stringStream.str();
+        std::string infoString {};
+        // Print the class
+        infoString += "The ";
+        infoString += boost::core::demangled_name( BOOST_CORE_TYPEID( *this ));
+        infoString += " at ";
+        infoString += theAddressOfThis;
+        return infoString;
+    }
+
 };
 
 #endif //EE205_ANIMAL_FARM_NODE_H
