@@ -11,7 +11,7 @@
 #include "Animal/Animal.h"
 #include "Utility/Gender.h"
 
-
+///Test function for implementation of spec
 int main(){
     SingleLinkedList linkedList;
     for(int i=0; i<10; i++){

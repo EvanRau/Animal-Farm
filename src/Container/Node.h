@@ -3,7 +3,7 @@
 //         Animal Farm - EE 205 - Spr 2023
 //
 ///
-/// @file    node.h
+/// @file    Node.h
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -33,6 +33,7 @@ public:
     }
     ///Deconstructs a node
     virtual ~Node()= default;
+    ///resets what the current node is pointing to
     virtual void reset(){
         next = nullptr;
     }
