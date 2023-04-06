@@ -33,7 +33,7 @@ public:
 
     virtual void dump() = 0;
 
-    virtual void validate() = 0;
+    virtual bool validate() = 0;
 };
 
 #endif //EE205_ANIMAL_FARM_CONTAINER_H

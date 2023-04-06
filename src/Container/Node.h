@@ -22,6 +22,8 @@ class Node{
     friend class SingleLinkedList;
 
 public:
+    Node* next; //@todo repair functionality in SingleLinkedList class so next can be accessed while protected
+
     ///Constructs a node that points to nullptr
     Node() : next(nullptr){
     }
@@ -39,8 +41,6 @@ public:
         return true;
     }
 
-
-    Node* next;
 };
 
 #endif //EE205_ANIMAL_FARM_NODE_H

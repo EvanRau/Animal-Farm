@@ -35,3 +35,45 @@ bool isIn(const Node* aNode){
     }
     return false;
 }
+
+void add(Node* newNode){
+    newNode->next = headNode;
+    headNode = newNode;
+}
+
+void removeAll(){
+    while(headNode != nullptr) {
+        Node *tempNode = headNode;
+        headNode = headNode->next;
+        free(tempNode);
+    }
+}
+
+void getRandomNode(){
+    size_t const listSize = size();
+    size_t const nodePlace = rand() % listSize;
+    Node* randNode = headNode;
+    for(size_t i = 0; i < nodePlace; i++){
+        randNode = randNode->next;
+    }
+    randNode->dump();
+}
+
+void dump(){
+    Node* curNode = headNode;
+    while(curNode != nullptr){
+        curNode->dump();
+        curNode = curNode->next;
+    }
+}
+
+bool validate(){
+    size_t const nodeSize = size();
+    size_t chainSize = 0;
+    Node* tracker = headNode;
+    while(tracker != nullptr){
+        chainSize++;
+        tracker = tracker->next;
+    }
+    return nodeSize==chainSize;
+}
