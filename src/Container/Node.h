@@ -12,6 +12,7 @@
 
 
 #include "../config.h"
+#include "SingleLinkedList.h"
 #include <boost/core/typeinfo.hpp> // For typeinfo()
 #include <iostream>
 #include <string>
@@ -40,7 +41,7 @@ public:
     }
 
 
-
+    friend class SingleLinkedList;
 };
 
 #endif //EE205_ANIMAL_FARM_NODE_H
