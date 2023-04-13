@@ -68,6 +68,10 @@ public:
         return infoString;
     }
 
+    static bool compareByAddress(const Node* lhs_node, const Node* rhs_node){
+        return lhs_node > rhs_node;
+    }
+
 };
 
 #endif //EE205_ANIMAL_FARM_NODE_H

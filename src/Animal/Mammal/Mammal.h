@@ -52,6 +52,9 @@ public:
         }
         return Animal::validate();
     }
+    static bool compareByColor(string lhs_color, string rhs_color){
+        return lhs_color < rhs_color;
+    }
 };
 
 #endif //EE205_ANIMAL_FARM_MAMMAL_H
