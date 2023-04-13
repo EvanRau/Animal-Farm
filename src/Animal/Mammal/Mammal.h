@@ -10,10 +10,10 @@
 #ifndef EE205_ANIMAL_FARM_MAMMAL_H
 #define EE205_ANIMAL_FARM_MAMMAL_H
 
-#include <string>
+
 #include "../../config.h"
 #include "../Animal.h"
-
+#include <string>
 
 using namespace std;
 
@@ -23,8 +23,12 @@ private:
 public:
     Mammal() : color("Unknown Color"){
     }
-    Mammal(const string newColor) : color(newColor){
+    Mammal(const string &newColor) : color(newColor){
     }
+    virtual ~Mammal(){
+    }
+
+
     string getColor() const noexcept{
         return color;
     };

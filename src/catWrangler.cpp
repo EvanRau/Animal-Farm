@@ -7,10 +7,10 @@
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
 
-
-
-#include <iostream>
+#include "Animal/Mammal/Mammal.h"
 
 int main(){
-    std::cout<<"catWrangler"<<std::endl;
+    Mammal bingus("Rainbow");
+    bingus.setGender(Gender::MALE);
+    bingus.dump();
 }
