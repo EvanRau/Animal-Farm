@@ -17,6 +17,7 @@
 
 using namespace std;
 
+///Properties of a Mammal
 class Mammal : public Animal{
 private:
     string color = "Unknown Color";

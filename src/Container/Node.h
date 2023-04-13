@@ -68,6 +68,8 @@ public:
         return infoString;
     }
 
+    ///Compares the addresses of two nodes
+    ///@returns true if the address of the left node is smaller than that of the right
     static bool compareByAddress(const Node* lhs_node, const Node* rhs_node){
         return lhs_node < rhs_node;
     }
