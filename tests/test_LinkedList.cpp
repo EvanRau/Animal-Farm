@@ -79,7 +79,12 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
             for (int j = 1; j <=i; j++) {
                 testList.add(new Mammal("A color"));
             }
+            if(i > 2){
+                BOOST_CHECK_EQUAL(testList.isSorted(), false);
+            }
+            BOOST_CHECK_EQUAL(testList.size(), i);
             testList.sort();
+            BOOST_CHECK_EQUAL(testList.size(), i);
             if( !testList.isSorted() ) {
                 testList.dump() ;
             }
