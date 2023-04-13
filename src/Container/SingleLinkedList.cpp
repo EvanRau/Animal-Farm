@@ -73,6 +73,7 @@ void SingleLinkedList::removeAll(){
     }
 }
 
+///Unlinks a node from a linked list; node is preserved for future use elsewhere
 void SingleLinkedList::unlinkNode(Node* deadNode) {
     if(headNode == deadNode){
         headNode = deadNode->next;
@@ -131,6 +132,7 @@ bool SingleLinkedList::validate() const noexcept{
     return true;
 }
 
+///Sorts linked list from smallest address to largest
 void SingleLinkedList::sort(){
     SingleLinkedList newList;
     while(headNode!=nullptr){
@@ -152,6 +154,8 @@ void SingleLinkedList::sort(){
     headNode = newList.headNode;
 }
 
+///Checks whether a given linked list is sorted by its addresses from smallest to largest
+///@returns true of the list is properly sorted
 bool SingleLinkedList::isSorted(){
     Node* tracker = headNode;
     while(tracker->next != nullptr){
