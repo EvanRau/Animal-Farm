@@ -70,7 +70,8 @@ char* trim_edges( char inString[] ) {
 ///    - Replace consecutive whitespace characters inside the string with
 ///      a single `" "`
 char* trim( char inString[] ) {
-    int i, j;
+    int i;
+    int j;
     for(i=j=0; inString[i]; i++){
         if(!isspace(inString[i]) || (i > 0 && !isspace(inString[i-1]))) {
             inString[j++] = inString[i];

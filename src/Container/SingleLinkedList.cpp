@@ -66,11 +66,7 @@ void SingleLinkedList::add(Node* newNode){
 
 ///Empties all nodes from the list
 void SingleLinkedList::removeAll(){
-    while(headNode != nullptr) {
-        Node *tempNode = headNode;
-        headNode = headNode->next;
-        free(tempNode);
-    }
+    headNode=nullptr;
 }
 
 ///Unlinks a node from a linked list; node is preserved for future use elsewhere
@@ -138,14 +134,11 @@ void SingleLinkedList::sort(){
     while(headNode!=nullptr){
         Node* temp = headNode;
         Node* minNode = temp;
-        Node* nodeA = temp;
-        Node* nodeB = temp->next;
-        for(size_t i = 0; i<(size()-1); i++) {
-           if (Node::compareByAddress(nodeA, nodeB)) {
-               minNode = nodeA;
+        while(temp->next!=nullptr) {
+           if (Node::compareByAddress(temp, temp->next)) {
+               minNode = temp;
            }
-           nodeA = nodeA->next;
-           nodeB = nodeB->next;
+           temp=temp->next;
         }
         unlinkNode(minNode);
         newList.add(minNode);
