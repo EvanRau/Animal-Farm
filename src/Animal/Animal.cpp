@@ -23,7 +23,6 @@ string_view Animal::getKingdom() const noexcept{
 ///Checks that given animal is valid
 ///@returns true if animal is valid, false if not
 bool Animal::validate() const noexcept{
-
     return !getKingdom().empty() && !info().empty() && validateGender(gender) && Node::validate();
 }
 
