@@ -12,9 +12,8 @@
 
 int main(){
     SingleLinkedList linkedList;
-    for(int i=0; i<10; i++) {
-        linkedList.add( new Mammal("Brown")) ;
-    }
+    string catColors[10]= ['Brown', "Black", "Ginger", ]
+
     linkedList.dump();
     linkedList.sort();
     if(linkedList.validate() && linkedList.isSorted()) {

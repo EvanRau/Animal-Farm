@@ -73,35 +73,16 @@ void SingleLinkedList::removeAll(){
     }
 }
 
-void SingleLinkedList::deleteNode(int nodePos) {
-    if((size_t) nodePos > size()){
-        throw domain_error("Node to delete does not exist");
+void SingleLinkedList::unlinkNode(Node* deadNode) {
+    if(headNode == deadNode){
+        headNode = deadNode->next;
+        return;
     }
-    //Deleting headNode
-    if(nodePos == 0){
-        Node* tempNode = headNode;
-        headNode = headNode->next;
-        free(tempNode);
+    Node* tempNode = headNode;
+    while(tempNode->next != deadNode){
+        tempNode = tempNode->next;
     }
-    //Deleting node pointed to by head node
-    else if(nodePos == 1){
-        Node* prevNode = headNode;
-        Node* tempNode = headNode->next;
-        prevNode->next = tempNode->next;
-        free(tempNode);
-
-    }
-    //Deleting node pointed to later in sequence
-    else{
-        Node* prevNode = headNode;
-        Node* tempNode = headNode->next;
-        for(int i = 1; i < nodePos; i++){
-            prevNode = prevNode->next;
-            tempNode = tempNode->next;
-        }
-        prevNode->next = tempNode->next;
-        free(tempNode);
-    }
+    tempNode->next = deadNode->next;
 }
 
 ///Gets a random node from within the list
@@ -151,26 +132,24 @@ bool SingleLinkedList::validate() const noexcept{
 }
 
 void SingleLinkedList::sort(){
-    SingleLinkedList sortedList;
-    Node* trackerNode = headNode;
-    Node* minNode;
-    while(trackerNode != nullptr){
-        trackerNode = headNode;
-        int nodePos = 0;
-        int minNodePos = 0;
-        while(trackerNode->next != nullptr){
-            minNode = headNode;
-            if(Node::compareByAddress(minNode, trackerNode->next)){
-                minNode = trackerNode->next;
-                nodePos = minNodePos;
-            }
-            trackerNode=trackerNode->next;
-            minNodePos++;
+    SingleLinkedList newList;
+    while(headNode!=nullptr){
+        Node* temp = headNode;
+        Node* minNode = temp;
+        Node* nodeA = temp;
+        Node* nodeB = temp->next;
+        for(size_t i = 0; i<(size()-1); i++) {
+           if (Node::compareByAddress(nodeA, nodeB)) {
+               minNode = nodeA;
+           }
+           nodeA = nodeA->next;
+           nodeB = nodeB->next;
         }
-        sortedList.add((minNode));
-        deleteNode(nodePos);
-    }
+        unlinkNode(minNode);
+        newList.add(minNode);
 
+    }
+    headNode = newList.headNode;
 }
 
 bool SingleLinkedList::isSorted(){

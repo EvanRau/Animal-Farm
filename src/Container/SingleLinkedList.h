@@ -29,7 +29,7 @@ public:
 
     virtual void removeAll();
 
-    virtual void deleteNode(int nodePos);
+    virtual void unlinkNode(Node* deadNode);
 
     virtual Node* getRandomNode() const noexcept;
 
