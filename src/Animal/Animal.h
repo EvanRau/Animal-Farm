@@ -55,9 +55,7 @@ class Animal : public Node {
 
         [[nodiscard]] string info() const noexcept;
 
-        static bool compareByGender(const Gender lhs_Gender, const Gender rhs_gender){
-            return lhs_Gender > rhs_gender;
-        }
+
 };
 
 

@@ -19,10 +19,8 @@ using namespace std;
 
 class Mammal : public Animal{
 private:
-    string color;
+    string color = "Unknown Color";
 public:
-    Mammal() : color("Unknown Color"){
-    }
     Mammal(const string &newColor) : color(newColor){
     }
     virtual ~Mammal(){
@@ -52,9 +50,7 @@ public:
         }
         return Animal::validate();
     }
-    static bool compareByColor(string lhs_color, string rhs_color){
-        return lhs_color < rhs_color;
-    }
+
 };
 
 #endif //EE205_ANIMAL_FARM_MAMMAL_H

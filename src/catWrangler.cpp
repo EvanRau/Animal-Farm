@@ -8,9 +8,18 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "Animal/Mammal/Mammal.h"
+#include "Container/SingleLinkedList.h"
 
 int main(){
-    Mammal bingus("Rainbow");
-    bingus.setGender(Gender::MALE);
-    bingus.dump();
+    SingleLinkedList linkedList;
+    for(int i=0; i<10; i++) {
+        linkedList.add( new Mammal("Brown")) ;
+    }
+    linkedList.dump();
+    linkedList.sort();
+    if(linkedList.validate() && linkedList.isSorted()) {
+        linkedList.dump();
+    } else {
+        std::cout<<"List Invalid."<<std::endl;
+    }
 }

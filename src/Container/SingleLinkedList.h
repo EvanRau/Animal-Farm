@@ -29,11 +29,17 @@ public:
 
     virtual void removeAll();
 
+    virtual void deleteNode(int nodePos);
+
     virtual Node* getRandomNode() const noexcept;
 
     virtual void dump() const noexcept;
 
     virtual bool validate() const noexcept;
+
+    virtual void sort();
+
+    virtual bool isSorted();
 };
 
 

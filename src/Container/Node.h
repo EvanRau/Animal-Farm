@@ -69,7 +69,7 @@ public:
     }
 
     static bool compareByAddress(const Node* lhs_node, const Node* rhs_node){
-        return lhs_node > rhs_node;
+        return lhs_node < rhs_node;
     }
 
 };
