@@ -16,7 +16,7 @@
 class Container {
 protected:
     ///stores number of items in given container
-    size_t count;
+    size_t count = 0;
 public:
     ///Generates a default container
     Container(){

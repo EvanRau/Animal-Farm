@@ -73,13 +73,18 @@ void SingleLinkedList::removeAll(){
 void SingleLinkedList::unlinkNode(Node* deadNode) {
     if(headNode == deadNode){
         headNode = deadNode->next;
+        deadNode->next = nullptr;
         return;
     }
     Node* tempNode = headNode;
     while(tempNode->next != deadNode){
         tempNode = tempNode->next;
+        if(tempNode->next == nullptr){
+            throw logic_error("deadNode not in linked list");
+        }
     }
     tempNode->next = deadNode->next;
+    deadNode->next = nullptr;
 }
 
 ///Gets a random node from within the list
