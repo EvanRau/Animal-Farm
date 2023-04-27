@@ -7,10 +7,11 @@
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
 
-#include <iostream>
+
 #include "Animal/Cat/Cat.h"
 #include "Utility/Name.h"
 #include "Container/SingleLinkedList.h"
+#include <iostream>
 
 
 #define ALL_MY_ANIMALS 100 ///< Number of animals
