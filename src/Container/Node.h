@@ -26,10 +26,16 @@ private:
     ///Node that is pointed to by current node
     Node* next;
 
+protected:
+    ///Node to the left of this node
+    Node* left;
+    ///Node to the right of this node
+    Node* right;
+
 public:
 
     ///Constructs a node that points to nullptr
-    Node() : next(nullptr){
+    Node() : next(nullptr) , left(nullptr) , right(nullptr){
     }
     ///Deconstructs a node
     virtual ~Node()= default;
