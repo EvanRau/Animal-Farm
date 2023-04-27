@@ -158,5 +158,6 @@ add_executable(hello src/hello.cpp src/Utility/Trim.cpp src/Utility/Trim.h src/c
 add_executable(epicCats src/Legacy/epicCats.cpp src/Legacy/Cat.cpp src/Legacy/ArrayDB.cpp src/Legacy/Cat.h src/Legacy/ArrayDB.h src/config.h)
 add_executable(catInfinitum src/main_catInfinitum.cpp src/Container/Container.h src/Container/Node.h src/Container/SingleLinkedList.cpp src/Container/SingleLinkedList.h src/Animal/Animal.cpp src/Animal/Animal.h src/Utility/Gender.cpp src/Utility/Gender.h)
 add_executable(catWrangler src/catWrangler.cpp src/Container/Container.h src/Container/Node.h src/Container/SingleLinkedList.cpp src/Container/SingleLinkedList.h src/Animal/Animal.cpp src/Animal/Animal.h src/Utility/Gender.cpp src/Utility/Gender.h src/Animal/Mammal/Mammal.h)
+add_executable(catEmpire src/main_catEmpire.cpp src/Container/Container.h src/Container/Node.h src/Container/SingleLinkedList.cpp src/Container/SingleLinkedList.h src/Animal/Animal.cpp src/Animal/Animal.h src/Utility/Gender.cpp src/Utility/Gender.h src/Animal/Mammal/Mammal.h)
 
 add_subdirectory(tests)

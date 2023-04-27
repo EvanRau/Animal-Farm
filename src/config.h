@@ -10,6 +10,7 @@
 #ifndef EE205_ANIMAL_FARM_CONFIG_H
 #define EE205_ANIMAL_FARM_CONFIG_H
 #include <iomanip> // For setfill()
+#include <random>  // For random_device & mt19937
 using namespace std;
 
 ///A grammatically correct title for the program
@@ -32,5 +33,18 @@ cout << setfill('=') << setw(80) << "" <<endl;
  << std::setw(20) << (className) \
  << std::setw(20) << (member) \
  << std::setw(40) /* (data) */
+
+/// Establish the RNG used by Animal Farm
+///
+/// The C++ standard library has some great built-in random number features.
+/// @see https://en.cppreference.com/w/cpp/header/random
+///
+/// If you want the same pseudorandom sequence each time you run the program,
+/// use `std::mt19937`.
+///
+/// If you want a truly unique random sequence each time you run the program,
+/// use `std::random_device`.
+// #define ANIMAL_FARM_RNG std::random_device
+#define ANIMAL_FARM_RNG std::mt19937
 
 #endif //EE205_ANIMAL_FARM_CONFIG_H
