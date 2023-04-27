@@ -4,7 +4,7 @@
 //
 /// Tests sorting function by creating linked list of cats and sorting the nodes
 ///
-/// @file    catWrangler.cpp
+/// @file    main_catWrangler.cpp
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////
 

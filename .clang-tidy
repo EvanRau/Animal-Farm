@@ -11,7 +11,7 @@
 ###############################################################################
 
 ---
-Checks:          '-checks=-*,boost-*,bugprone-*,cert-*,clang-analyzer-*,llvm-*,-llvm-header-guard,misc-*,performance-*,portability-*,readability-*,-readability-implicit-bool-conversion,-cert-msc30-c,-cert-msc50-cpp,-readability-magic-numbers,-readability-function-cognitive-complexity,-clang-diagnostic-unused-variable,-misc-non-private-member-variables-in-classes,-readability-redundant-access-specifiers,-cert-err58-cpp,-readability-redundant-string-init'
+Checks:          '-checks=-*,boost-*,bugprone-*,cert-*,clang-analyzer-*,llvm-*,-llvm-header-guard,misc-*,performance-*,portability-*,readability-*,-readability-implicit-bool-conversion,-cert-msc30-c,-cert-msc50-cpp,-readability-magic-numbers,-readability-function-cognitive-complexity,-clang-diagnostic-unused-variable,-misc-non-private-member-variables-in-classes,-readability-redundant-access-specifiers,-cert-err58-cpp,-readability-redundant-string-init,-performance-unnecessary-value-param,-readability-convert-member-functions-to-static'
 WarningsAsErrors: ''
 HeaderFilterRegex: '.+.h'
 AnalyzeTemporaryDtors: false
