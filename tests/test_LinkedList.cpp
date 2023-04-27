@@ -23,14 +23,14 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
     BOOST_AUTO_TEST_CASE( test_isEmpty ) {
         SingleLinkedList testList;
         BOOST_CHECK_EQUAL(testList.isEmpty(), true );
-        testList.add(new Mammal("A color"));
+        testList.add(new Mammal("A color", newRandomGender()));
         BOOST_CHECK_EQUAL(testList.isEmpty(), false );
     }
     BOOST_AUTO_TEST_CASE( test_size ) {
         SingleLinkedList testList;
         for(int i=1; i < 100;i++) {
             for (int j = 1; j <= i; j++) {
-                testList.add(new Animal(newRandomGender(), 0.1));
+                testList.add(new Animal());
             }
             BOOST_CHECK_EQUAL(testList.validate(), true);
             BOOST_CHECK_EQUAL(testList.size(), i);
@@ -41,7 +41,7 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
         SingleLinkedList testList;
         for(int i=1; i < 100;i++) {
             for (int j = 1; j <= i; j++) {
-                testList.add(new Animal(newRandomGender(), 0.1));
+                testList.add(new Animal());
             }
             testList.removeAll();
             BOOST_CHECK_EQUAL(testList.isEmpty(), true);
@@ -62,7 +62,7 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
         SingleLinkedList testList;
         for(int i=1; i < 100;i++) {
             for (int j = 1; j <= i; j++) {
-                testList.add(new Animal(newRandomGender(), 0.1));
+                testList.add(new Animal());
             }
             BOOST_CHECK_EQUAL(testList.validate(), true);
             BOOST_CHECK_EQUAL(testList.size(), i);
@@ -77,7 +77,7 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
         SingleLinkedList testList;
         for(int i=1; i < 100;i++) {
             for (int j = 1; j <=i; j++) {
-                testList.add(new Mammal("A color"));
+                testList.add(new Mammal("A color", newRandomGender()));
             }
             if(i > 2){
                 BOOST_CHECK_EQUAL(testList.isSorted(), false);

@@ -13,6 +13,7 @@
 
 #include "../../config.h"
 #include "../Animal.h"
+#include "../../Utility/Gender.h"
 #include <string>
 
 using namespace std;
@@ -22,9 +23,11 @@ class Mammal : public Animal{
 private:
     ///The color of a mammal. Unknown by default
     string color = "Unknown Color";
+    ///Gender of animal; Unknown by default
+    Gender gender = Gender::UNKNOWN_GENDER;
 public:
     ///Constructs a mammal with a known color
-    Mammal(const string &newColor) :color(newColor){
+    Mammal(const string &newColor, const Gender newGender) :color(newColor), gender(newGender){
     }
     ///Deconstricts a mammal
     virtual ~Mammal(){
@@ -42,6 +45,19 @@ public:
         }
         color = newColor;
     }
+    ///Pulls gender of given animal
+    ///@returns gender of animal
+    [[nodiscard]] Gender getGender() const noexcept{
+        return gender;
+    }
+    ///Sets gender of animal with unknown gender
+    ///Throws exception if gender is not unknown
+    void setGender(const Gender setGender){
+        if(this->gender != Gender::UNKNOWN_GENDER) {
+            throw runtime_error("Gender already set");
+        }
+        this->gender = setGender;
+    }
     ///Gets the classification of a mammal
     static string getClassification() noexcept{
         return "Mammalia";
@@ -51,6 +67,7 @@ public:
         Animal::dump();
         FORMAT_LINE_FOR_DUMP( "Mammal", "classification" ) << getClassification() << endl ;
         FORMAT_LINE_FOR_DUMP( "Mammal", "color" ) << getColor() << endl ;
+        FORMAT_LINE_FOR_DUMP( "Mammal", "gender" ) << getGender() << endl ;
     }
     ///Checks that given mammal is valid
     ///@returns true if mammal is valid, false if not

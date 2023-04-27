@@ -23,7 +23,7 @@ string_view Animal::getKingdom() const noexcept{
 ///Checks that given animal is valid
 ///@returns true if animal is valid, false if not
 bool Animal::validate() const noexcept{
-    return !getKingdom().empty() && !info().empty() && validateGender(gender) && Node::validate();
+    return !getKingdom().empty() && !info().empty() && validateWeight(weight) && Node::validate();
 }
 
 ///Prints out data on given animal
@@ -31,7 +31,7 @@ void Animal::dump() const noexcept{
     PRINT_HEADING_FOR_DUMP()
     Node::dump() ;
     FORMAT_LINE_FOR_DUMP( "Animal", "kingdom" ) << getKingdom() << endl ;
-    FORMAT_LINE_FOR_DUMP( "Animal", "gender" ) << getGender() << endl ;
+    FORMAT_LINE_FOR_DUMP( "Animal", "weight" ) << weight << endl ;
 }
 
 ///Provides information on animal
