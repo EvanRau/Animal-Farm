@@ -25,14 +25,14 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
     BOOST_AUTO_TEST_CASE( test_isEmpty ) {
         SingleLinkedList testList;
         BOOST_CHECK_EQUAL(testList.isEmpty(), true );
-        testList.add(new Cat("A color", newRandomGender()));
+        testList.add(new Cat("A color", newRandomGender(), Cat::names.getNextName()));
         BOOST_CHECK_EQUAL(testList.isEmpty(), false );
     }
     BOOST_AUTO_TEST_CASE( test_size ) {
         SingleLinkedList testList;
         for(int i=1; i < 100;i++) {
             for (int j = 1; j <= i; j++) {
-                testList.add(new Cat());
+                testList.add(new Cat(Cat::names.getNextName()));
             }
             BOOST_CHECK_EQUAL(testList.validate(), true);
             BOOST_CHECK_EQUAL(testList.size(), i);
@@ -43,7 +43,7 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
         SingleLinkedList testList;
         for(int i=1; i < 100;i++) {
             for (int j = 1; j <= i; j++) {
-                testList.add(new Cat());
+                testList.add(new Cat(Cat::names.getNextName()));
             }
             testList.removeAll();
             BOOST_CHECK_EQUAL(testList.isEmpty(), true);
@@ -54,17 +54,17 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
     }
     BOOST_AUTO_TEST_CASE( test_isIn ) {
         SingleLinkedList testList;
-        Node* bingus = new Cat();
+        Node* bingus = new Cat(Cat::names.getNextName());
         testList.add(bingus);
-        Node* testNode = new Cat();
+        Node* testNode = new Cat(Cat::names.getNextName());
         testList.add(testNode); BOOST_CHECK_EQUAL(testList.isIn(bingus), true);
-        Node* fakeNode = new Cat();  BOOST_CHECK_EQUAL(testList.isIn(fakeNode), false);
+        Node* fakeNode = new Cat(Cat::names.getNextName());  BOOST_CHECK_EQUAL(testList.isIn(fakeNode), false);
     }
     BOOST_AUTO_TEST_CASE( test_unlinkNode ) {
         SingleLinkedList testList;
         for(int i=1; i < 100;i++) {
             for (int j = 1; j <= i; j++) {
-                testList.add(new Cat());
+                testList.add(new Cat(Cat::names.getNextName()));
             }
             BOOST_CHECK_EQUAL(testList.validate(), true);
             BOOST_CHECK_EQUAL(testList.size(), i);
@@ -79,7 +79,7 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
         SingleLinkedList testList;
         for(int i=1; i < 100;i++) {
             for (int j = 1; j <=i; j++) {
-                testList.add(new Cat("A color", newRandomGender()));
+                testList.add(new Cat("A color", newRandomGender(), Cat::names.getNextName()));
             }
             if(i > 2){
                 BOOST_CHECK_EQUAL(testList.isSorted(), false);

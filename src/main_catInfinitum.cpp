@@ -17,7 +17,7 @@
 int main(){
     SingleLinkedList linkedList;
     for(int i=0; i<10; i++) {
-        linkedList.add( new Cat( "Brown", newRandomGender() )) ;
+        linkedList.add( new Cat( Cat::names.getNextName())) ;
     }
     if(linkedList.validate()) {
         linkedList.dump();

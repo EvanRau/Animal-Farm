@@ -10,20 +10,33 @@
 #ifndef EE205_ANIMAL_FARM_CAT_H
 #define EE205_ANIMAL_FARM_CAT_H
 
+
+#include "../../Utility/Name.h"
 #include "../Mammal/Mammal.h"
+
 using namespace std;
 
 class Cat : public Mammal {
+protected:
+    ///Name of a given cat
+    string name;
 public:
+    ///List of potential cat names
+    static Name names;
     ///Default constructor for a Cat
-    Cat() : Mammal( "Unknown Color", Gender::UNKNOWN_GENDER){
-    }
+    explicit Cat( string newName ) ;
     ///Cat constructor given a color and gender
-    Cat(const string &newColor, const Gender newGender) : Mammal(newColor, newGender){
+    Cat(const string &newColor, const Gender newGender, string newName) : Mammal(newColor, newGender), name(std::move(newName)){
     }
     string_view speak() const noexcept{
         return "Meow";
     }
+    ///Gets the name of a given cat
+    ///@returns the name of a given cat
+    string getName() const noexcept{
+        return name;
+    }
+    void setName(string newName);
 };
 
 
