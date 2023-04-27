@@ -37,6 +37,13 @@ public:
         return name;
     }
     void setName(string newName);
+
+    virtual bool validate() const noexcept;
+
+    virtual void dump() const noexcept{
+        Mammal::dump();
+        FORMAT_LINE_FOR_DUMP( "Cat", "name" ) << name << endl ;
+    }
 };
 
 

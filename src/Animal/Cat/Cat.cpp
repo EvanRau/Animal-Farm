@@ -38,3 +38,8 @@ void Cat::setName( const string newName ) {
     }
     name = newName;
 }
+
+bool Cat::validate() const noexcept {
+    return Mammal::validate() && Name::validateName(name);
+}
+
