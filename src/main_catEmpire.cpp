@@ -8,8 +8,11 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
+#include "Utility/Name.h"
+
 using namespace std;
 
 int main(){
-    cout<<"Cat Empire"<<endl;
+    Name testName("./data/testNames1.txt");
+    cout<<testName.getNextName()<<endl;
 }
