@@ -10,11 +10,11 @@
 #ifndef EE205_ANIMAL_FARM_MAMMAL_H
 #define EE205_ANIMAL_FARM_MAMMAL_H
 
-
+#include "../../Utility/Gender.h"
 #include "../../config.h"
 #include "../Animal.h"
-#include "../../Utility/Gender.h"
 #include <string>
+
 
 using namespace std;
 

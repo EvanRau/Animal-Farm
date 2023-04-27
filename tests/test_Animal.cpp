@@ -12,16 +12,12 @@
 #include <boost/test/unit_test.hpp>
 
 #include "../src/Animal/Animal.h"
+#include "../src/Animal/Cat/Cat.h"
 
 using namespace std;
 
 BOOST_AUTO_TEST_SUITE( test_Animal )
 
-
-    BOOST_AUTO_TEST_CASE( test_validate ) {
-        Animal test1(10);
-        BOOST_CHECK_EQUAL(test1.validate(), true); //Constructor with no arguments
-    }
 
     BOOST_AUTO_TEST_CASE( test_validateWeight ) {
         BOOST_CHECK_EQUAL( Animal::validateWeight( -0.1 ), false ) ;

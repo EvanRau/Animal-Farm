@@ -12,8 +12,10 @@
 #include <boost/test/unit_test.hpp>
 
 #include "../src/Animal/Animal.h"
+#include "../src/Animal/Cat/Cat.h"
 #include "../src/Animal/Mammal/Mammal.h"
 #include "../src/Container/SingleLinkedList.h"
+
 
 using namespace std;
 
@@ -23,14 +25,14 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
     BOOST_AUTO_TEST_CASE( test_isEmpty ) {
         SingleLinkedList testList;
         BOOST_CHECK_EQUAL(testList.isEmpty(), true );
-        testList.add(new Mammal("A color", newRandomGender()));
+        testList.add(new Cat("A color", newRandomGender()));
         BOOST_CHECK_EQUAL(testList.isEmpty(), false );
     }
     BOOST_AUTO_TEST_CASE( test_size ) {
         SingleLinkedList testList;
         for(int i=1; i < 100;i++) {
             for (int j = 1; j <= i; j++) {
-                testList.add(new Animal());
+                testList.add(new Cat());
             }
             BOOST_CHECK_EQUAL(testList.validate(), true);
             BOOST_CHECK_EQUAL(testList.size(), i);
@@ -41,7 +43,7 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
         SingleLinkedList testList;
         for(int i=1; i < 100;i++) {
             for (int j = 1; j <= i; j++) {
-                testList.add(new Animal());
+                testList.add(new Cat());
             }
             testList.removeAll();
             BOOST_CHECK_EQUAL(testList.isEmpty(), true);
@@ -52,17 +54,17 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
     }
     BOOST_AUTO_TEST_CASE( test_isIn ) {
         SingleLinkedList testList;
-        Node* bingus = new Animal();
+        Node* bingus = new Cat();
         testList.add(bingus);
-        Node* testNode = new Animal();
+        Node* testNode = new Cat();
         testList.add(testNode); BOOST_CHECK_EQUAL(testList.isIn(bingus), true);
-        Node* fakeNode = new Animal();  BOOST_CHECK_EQUAL(testList.isIn(fakeNode), false);
+        Node* fakeNode = new Cat();  BOOST_CHECK_EQUAL(testList.isIn(fakeNode), false);
     }
     BOOST_AUTO_TEST_CASE( test_unlinkNode ) {
         SingleLinkedList testList;
         for(int i=1; i < 100;i++) {
             for (int j = 1; j <= i; j++) {
-                testList.add(new Animal());
+                testList.add(new Cat());
             }
             BOOST_CHECK_EQUAL(testList.validate(), true);
             BOOST_CHECK_EQUAL(testList.size(), i);
@@ -77,7 +79,7 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
         SingleLinkedList testList;
         for(int i=1; i < 100;i++) {
             for (int j = 1; j <=i; j++) {
-                testList.add(new Mammal("A color", newRandomGender()));
+                testList.add(new Cat("A color", newRandomGender()));
             }
             if(i > 2){
                 BOOST_CHECK_EQUAL(testList.isSorted(), false);

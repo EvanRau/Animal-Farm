@@ -23,7 +23,7 @@ using namespace std;
 ///Properties of an animal. Includes its gender and its kingdom
 class Animal : public Node {
     protected:
-
+        ///The given weight of an animal
         float weight;
     public:
         Animal() : weight(0.1) {
@@ -40,9 +40,14 @@ class Animal : public Node {
 
         [[nodiscard]] string info() const noexcept;
 
+        ///Checks that the weight is not <= 0
+        ///@returns false if the weight is <= 0
         static bool validateWeight(float weight){
             return weight > 0;
         }
+
+        /// Ask the Animal to say something
+        virtual std::string_view speak() const noexcept = 0;
 
 
 };

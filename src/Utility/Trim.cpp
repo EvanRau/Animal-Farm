@@ -62,7 +62,6 @@ extern char* trim_edges( char* inString ) {
 ///    - Trim trailing whitespace
 ///    - Replace consecutive whitespace characters inside the string with
 ///      a single `" "`
-
 extern char* trim( char* inString ) {
 
     inString = trim_edges(inString);
