@@ -2,6 +2,7 @@
 //         University of Hawaii, College of Engineering
 //         Animal Farm - EE 205 - Spr 2023
 //
+/// Enum that defines gender types of certain animals
 ///
 /// @file    Gender.cpp
 /// @author  Evan Rau <evanrau@hawaii.edu>

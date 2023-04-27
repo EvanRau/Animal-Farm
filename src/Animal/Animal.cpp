@@ -2,6 +2,7 @@
 //         University of Hawaii, College of Engineering
 //         Animal Farm - EE 205 - Spr 2023
 //
+/// A child class of nodes that references animals of all kinds
 ///
 /// @file    Animal.cpp
 /// @author  Evan Rau <evanrau@hawaii.edu>

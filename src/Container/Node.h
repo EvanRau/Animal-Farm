@@ -2,6 +2,7 @@
 //         University of Hawaii, College of Engineering
 //         Animal Farm - EE 205 - Spr 2023
 //
+/// A parent class that refers to objects that can point to other objects
 ///
 /// @file    Node.h
 /// @author  Evan Rau <evanrau@hawaii.edu>

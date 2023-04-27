@@ -2,6 +2,7 @@
 //         University of Hawaii, College of Engineering
 //         Animal Farm - EE 205 - Spr 2023
 //
+/// Tests legacy functions by generating a database and adding cats to said database
 ///
 /// @file    epicCats.cpp
 /// @author  Evan Rau <evanrau@hawaii.edu>

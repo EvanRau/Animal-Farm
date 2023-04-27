@@ -2,6 +2,8 @@
 //         University of Hawaii, College of Engineering
 //         Animal Farm - EE 205 - Spr 2023
 //
+/// Holds info on creating and validating cats
+///
 /// @file    Cat.cpp
 /// @author  Evan Rau <evanrau@hawaii.edu>
 ///////////////////////////////////////////////////////////////////////////////

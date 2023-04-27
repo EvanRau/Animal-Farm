@@ -2,6 +2,7 @@
 //         University of Hawaii, College of Engineering
 //         Animal Farm - EE 205 - Spr 2023
 //
+/// Creates list of cats and pulls the info of some of them at random
 ///
 /// @file    main_catEmpire.cpp
 /// @author  Evan Rau <evanrau@hawaii.edu>

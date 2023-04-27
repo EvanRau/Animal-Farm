@@ -2,6 +2,7 @@
 //         University of Hawaii, College of Engineering
 //         Animal Farm - EE 205 - Spr 2023
 //
+/// A class that refers to containers that hold nodes
 ///
 /// @file    Container.h
 /// @author  Evan Rau <evanrau@hawaii.edu>
