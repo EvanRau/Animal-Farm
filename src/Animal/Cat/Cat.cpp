@@ -39,7 +39,15 @@ void Cat::setName( const string newName ) {
     name = newName;
 }
 
+///Checks that the Cat is valid
+///@returns true if the cat is a valid mammal & if its name is valid
 bool Cat::validate() const noexcept {
     return Mammal::validate() && Name::validateName(name);
+}
+
+///Returns a random cat
+Cat* Cat::getRandomAnimal() {
+    Name catColors( "./data/catColors.txt" );
+    return new Cat(catColors.getNextName(), newRandomGender(), Cat::names.getNextName());
 }
 

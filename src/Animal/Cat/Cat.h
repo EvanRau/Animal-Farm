@@ -12,6 +12,7 @@
 
 
 #include "../../Utility/Name.h"
+#include "../Animal.h"
 #include "../Mammal/Mammal.h"
 
 using namespace std;
@@ -44,6 +45,8 @@ public:
         Mammal::dump();
         FORMAT_LINE_FOR_DUMP( "Cat", "name" ) << name << endl ;
     }
+
+    static Cat* getRandomAnimal();
 };
 
 

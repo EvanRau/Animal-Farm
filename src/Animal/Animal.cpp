@@ -34,9 +34,23 @@ void Animal::dump() const noexcept{
     FORMAT_LINE_FOR_DUMP( "Animal", "weight" ) << weight << endl ;
 }
 
-///Provides information on animal
-///@returns "An animal" for now
-string Animal::info() const noexcept{
-    return "An animal";
+
+std::string Animal::info() const noexcept {
+    // Put the address of this object into a string
+    std::stringstream stringStream;
+    stringStream << this;
+    const std::string theAddressOfThis = stringStream.str();
+    string infoString {};
+    // Print the class
+    infoString += "The ";
+    infoString += boost::core::demangled_name( BOOST_CORE_TYPEID( *this ));
+    infoString += " named ";
+    infoString += getName();
+    infoString += " at ";
+    infoString += theAddressOfThis;
+    infoString += " says ";
+    infoString += speak();
+    return infoString;
 }
+
 

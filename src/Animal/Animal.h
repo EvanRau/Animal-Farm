@@ -13,6 +13,7 @@
 
 
 #include "../Container/Node.h"
+#include "../Utility/Name.h"
 #include <iomanip>
 #include <string>
 
@@ -38,8 +39,6 @@ class Animal : public Node {
 
         void dump() const noexcept;
 
-        [[nodiscard]] string info() const noexcept;
-
         ///Checks that the weight is not <= 0
         ///@returns false if the weight is <= 0
         static bool validateWeight(float weight){
@@ -48,8 +47,16 @@ class Animal : public Node {
 
         /// Ask the Animal to say something
         virtual std::string_view speak() const noexcept = 0;
+        ///Gets the Animal's Name
+        virtual string getName() const noexcept = 0;
 
-
+        /// Print a unique one-line string representing this object
+        ///
+        /// #### Sample Output
+        ///
+        /// The Node at 0x7ffff375ba90
+        ///
+        virtual std::string info() const noexcept;
 };
 
 
