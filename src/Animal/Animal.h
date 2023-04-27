@@ -26,12 +26,15 @@ class Animal : public Node {
     protected:
         ///Gender of animal; Unknown by default
         Gender gender;
+        float weight;
     public:
+        Animal() : gender(Gender::UNKNOWN_GENDER) , weight(0.1) {
+        }
         ///Constructs an Animal with unknown gender
-        Animal() : gender(Gender::UNKNOWN_GENDER) {
+        Animal(float weight) : gender(Gender::UNKNOWN_GENDER) , weight(weight) {
         }
         ///Constructs an Animal with a known gender
-        explicit Animal(Gender gender) : gender(gender) {
+        explicit Animal(Gender gender, float weight) : gender(gender) , weight(weight) {
         }
         [[nodiscard]] string_view getKingdom() const noexcept;
 
@@ -54,6 +57,10 @@ class Animal : public Node {
         void dump() const noexcept;
 
         [[nodiscard]] string info() const noexcept;
+
+        static bool validateWeight(float weight){
+            return weight > 0;
+        }
 
 
 };

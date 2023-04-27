@@ -39,3 +39,4 @@ void Animal::dump() const noexcept{
 string Animal::info() const noexcept{
     return "An animal";
 }
+

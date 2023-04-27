@@ -24,7 +24,7 @@ private:
     string color = "Unknown Color";
 public:
     ///Constructs a mammal with a known color
-    Mammal(const string &newColor) : color(newColor){
+    Mammal(const string &newColor) :color(newColor){
     }
     ///Deconstricts a mammal
     virtual ~Mammal(){

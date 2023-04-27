@@ -30,7 +30,7 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
         SingleLinkedList testList;
         for(int i=1; i < 100;i++) {
             for (int j = 1; j <= i; j++) {
-                testList.add(new Animal(newRandomGender()));
+                testList.add(new Animal(newRandomGender(), 0.1));
             }
             BOOST_CHECK_EQUAL(testList.validate(), true);
             BOOST_CHECK_EQUAL(testList.size(), i);
@@ -41,7 +41,7 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
         SingleLinkedList testList;
         for(int i=1; i < 100;i++) {
             for (int j = 1; j <= i; j++) {
-                testList.add(new Animal(newRandomGender()));
+                testList.add(new Animal(newRandomGender(), 0.1));
             }
             testList.removeAll();
             BOOST_CHECK_EQUAL(testList.isEmpty(), true);
@@ -62,7 +62,7 @@ BOOST_AUTO_TEST_SUITE( test_LinkedList )
         SingleLinkedList testList;
         for(int i=1; i < 100;i++) {
             for (int j = 1; j <= i; j++) {
-                testList.add(new Animal(newRandomGender()));
+                testList.add(new Animal(newRandomGender(), 0.1));
             }
             BOOST_CHECK_EQUAL(testList.validate(), true);
             BOOST_CHECK_EQUAL(testList.size(), i);
