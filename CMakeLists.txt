@@ -125,6 +125,8 @@ if (DOXYGEN_FOUND)
          ${CMAKE_SOURCE_DIR}/STATISTICS.md
          ${CMAKE_SOURCE_DIR}/WEEKLY_PROGRESS.md
          ${CMAKE_SOURCE_DIR}/About.md
+           ${CMAKE_SOURCE_DIR}/README.md
+           ${CMAKE_SOURCE_DIR}/LICENSE.md
          ALL
          COMMENT "Generating doxygen documentation for ${PROJECT_NAME} to ${DOXYGEN_OUTPUT_DIRECTORY}"
          )
