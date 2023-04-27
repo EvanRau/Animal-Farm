@@ -2,6 +2,7 @@
 //         University of Hawaii, College of Engineering
 //         Animal Farm - EE 205 - Spr 2023
 //
+/// A child class of mammal that defines Cats
 ///
 /// @file    Cat.cpp
 /// @author  Evan Rau <evanrau@hawaii.edu>
@@ -24,7 +25,7 @@ Name Cat::names( CAT_NAMES_FILE );
 /// a Cat properly like `Cat newCat( "Bella" );`
 ///
 /// @param newName Must be a valid name per Name::validateName
-Cat::Cat( const std::string newName )
+Cat::Cat( const string newName )
         : Mammal( "Unknown color", Gender::UNKNOWN_GENDER ) { // Delegating constructor
             Cat::setName( newName ) ;
     Cat::validate();
@@ -46,7 +47,7 @@ bool Cat::validate() const noexcept {
 }
 
 ///Returns a random cat
-Cat* Cat::getRandomAnimal() {
+Cat* Cat::getRandomCat() {
     Name catColors( "./data/catColors.txt" );
     return new Cat(catColors.getNextName(), newRandomGender(), Cat::names.getNextName());
 }

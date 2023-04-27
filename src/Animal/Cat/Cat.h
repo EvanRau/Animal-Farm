@@ -2,6 +2,7 @@
 //         University of Hawaii, College of Engineering
 //         Animal Farm - EE 205 - Spr 2023
 //
+/// A child class of mammal that defines Cats
 ///
 /// @file    Cat.h
 /// @author  Evan Rau <evanrau@hawaii.edu>
@@ -46,7 +47,7 @@ public:
         FORMAT_LINE_FOR_DUMP( "Cat", "name" ) << name << endl ;
     }
 
-    static Cat* getRandomAnimal();
+    static Cat* getRandomCat();
 };
 
 

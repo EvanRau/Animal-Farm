@@ -44,7 +44,7 @@ cout << setfill('=') << setw(80) << "" <<endl;
 ///
 /// If you want a truly unique random sequence each time you run the program,
 /// use `std::random_device`.
-// #define ANIMAL_FARM_RNG std::random_device
-#define ANIMAL_FARM_RNG std::mt19937
+ #define ANIMAL_FARM_RNG std::random_device
+//#define ANIMAL_FARM_RNG std::mt19937
 
 #endif //EE205_ANIMAL_FARM_CONFIG_H

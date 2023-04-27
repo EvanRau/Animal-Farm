@@ -9,6 +9,7 @@
 
 #include "Animal.h"
 #include "../config.h"
+#include "Cat/Cat.h"
 #include <iomanip>
 #include <iostream>
 #include <string>
@@ -51,6 +52,12 @@ std::string Animal::info() const noexcept {
     infoString += " says ";
     infoString += speak();
     return infoString;
+}
+
+///Returns a random animal; currently returns only cats
+Animal* Animal::getRandomAnimal() {
+    Name catColors( "./data/catColors.txt" );
+    return new Cat(catColors.getNextName(), newRandomGender(), Cat::names.getNextName());
 }
 
 

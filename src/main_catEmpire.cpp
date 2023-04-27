@@ -24,7 +24,7 @@ int main() {
     cout << "catEmpire" << endl ;
     SingleLinkedList myAnimals ;
     for( int i = 0 ; i < ALL_MY_ANIMALS ; i++ ) {
-        myAnimals.add( Cat::getRandomAnimal() );
+        myAnimals.add(Animal::getRandomAnimal() );
     }
     for( int i = 0 ; i < ANIMAL_SAMPLE_SIZE ; i++ ) {
         Node* aRandomNode = myAnimals.getRandomNode();

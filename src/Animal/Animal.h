@@ -27,7 +27,7 @@ class Animal : public Node {
         ///The given weight of an animal
         float weight;
     public:
-        Animal() : weight(0.1) {
+        Animal() : weight(2 + (((float) rand()) / (float) RAND_MAX) * (99 - 2)) {
         }
         ///Constructs an Animal with a given weight
         Animal(float weight) : weight(weight) {
@@ -57,6 +57,8 @@ class Animal : public Node {
         /// The Node at 0x7ffff375ba90
         ///
         virtual std::string info() const noexcept;
+
+    static Animal* getRandomAnimal();
 };
 
 
